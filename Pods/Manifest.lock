@@ -1,0 +1,15 @@
+PODS:
+  - SimpleAlert (2.0.1)
+  - SpriteKitEasingSwift (0.10)
+
+DEPENDENCIES:
+  - SimpleAlert
+  - SpriteKitEasingSwift
+
+SPEC CHECKSUMS:
+  SimpleAlert: 383d1197df2e7b70b9bef5771f3632979c1aadae
+  SpriteKitEasingSwift: 511748b42a203e93a800dc6cd07f71e8b37c6401
+
+PODFILE CHECKSUM: 7b6e598569978eae2a99d8897adc86dc702c24f6
+
+COCOAPODS: 1.2.0

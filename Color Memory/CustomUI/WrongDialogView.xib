@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WrongDialogView" customModule="Color_Memory">
+            <connections>
+                <outlet property="wrongDialogView" destination="0xk-nh-QgA" id="zyW-J0-ZCV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0xk-nh-QgA">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4j-gH-raP">
+                    <rect key="frame" x="5" y="5" width="290" height="240"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME'S UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-7l-rfW">
+                            <rect key="frame" x="73" y="15" width="144" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_memory_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-Jn-48v">
+                            <rect key="frame" x="70" y="70" width="150" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="7eb-to-Fax"/>
+                                <constraint firstAttribute="width" constant="150" id="FKs-Cr-n0w"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="vxd-Jn-48v" firstAttribute="top" secondItem="3Mb-7l-rfW" secondAttribute="bottom" constant="15" id="O9S-2B-Pid"/>
+                        <constraint firstItem="vxd-Jn-48v" firstAttribute="centerX" secondItem="B4j-gH-raP" secondAttribute="centerX" id="PB1-tT-sJp"/>
+                        <constraint firstAttribute="bottom" secondItem="vxd-Jn-48v" secondAttribute="bottom" constant="20" id="Rhl-q2-Jba"/>
+                        <constraint firstItem="3Mb-7l-rfW" firstAttribute="top" secondItem="B4j-gH-raP" secondAttribute="top" constant="15" id="VI0-EJ-Qeo"/>
+                        <constraint firstItem="3Mb-7l-rfW" firstAttribute="centerX" secondItem="B4j-gH-raP" secondAttribute="centerX" id="bZv-za-HbA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="B4j-gH-raP" firstAttribute="leading" secondItem="uxh-Dd-pzU" secondAttribute="leading" constant="5" id="4ii-5s-DTH"/>
+                <constraint firstItem="uxh-Dd-pzU" firstAttribute="bottom" secondItem="B4j-gH-raP" secondAttribute="bottom" constant="5" id="5Yr-8m-YwT"/>
+                <constraint firstItem="uxh-Dd-pzU" firstAttribute="trailing" secondItem="B4j-gH-raP" secondAttribute="trailing" constant="5" id="mfr-cK-cRS"/>
+                <constraint firstItem="B4j-gH-raP" firstAttribute="top" secondItem="uxh-Dd-pzU" secondAttribute="top" constant="5" id="yFg-T1-fHI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="uxh-Dd-pzU"/>
+            <point key="canvasLocation" x="427" y="-94"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="color_memory_icon" width="150" height="150"/>
+    </resources>
+</document>
