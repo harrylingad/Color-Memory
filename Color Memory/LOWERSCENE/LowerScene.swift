@@ -30,6 +30,7 @@ class LowerScene: SKScene{
         self.backgroundColor = UIColor.white
         self.anchorPoint = CGPoint(x: 0, y: 0.5)
         
+        // Initialize lower view
         LowerViewDimension.initializeLowerViewDimension(nodeSize: size)
         
         pauseNode = PauseNode(size: LowerViewDimension.pauseNodeSize!)
