@@ -36,7 +36,7 @@ class LevelNode: SKSpriteNode{
         
         
         
-        levelValueNode = SKLabelNode(fontNamed: "Avenir-Light")
+        levelValueNode = SKLabelNode(fontNamed: "Avenir-Bold")
         levelValueNode?.position = CGPoint(x: self.size.width * 0.5, y: -self.size.height * 0.3)
         levelValueNode?.text = "\(self.levelNode ?? 0) - \(self.section ?? 0)"
         levelValueNode?.fontSize = ((size.width) * 0.3)

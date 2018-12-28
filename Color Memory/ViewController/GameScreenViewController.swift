@@ -13,6 +13,9 @@ import SimpleAlert
 
 class GameScreenViewController: UIViewController, SquareProtocol {
     
+    @IBOutlet weak var navigationView: UIView!
+    
+    
     @IBOutlet weak var statsView: SKView!
     var upperScene: UpperMenuScene?
     
@@ -28,6 +31,8 @@ class GameScreenViewController: UIViewController, SquareProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationView.backgroundColor = CMColor.cmColorBlack()
         
         self.upperScene = UpperMenuScene(size: self.statsView.frame.size)
         self.statsView.presentScene(upperScene)

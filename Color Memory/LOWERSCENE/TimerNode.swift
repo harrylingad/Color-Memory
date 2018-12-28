@@ -41,7 +41,7 @@ class TimerNode: SKSpriteNode{
         timerLabelNode.fontSize = ((size.width) * 0.25)
         timerLabelNode.fontColor = UIColor.black
         
-        timerValueNode = SKLabelNode(fontNamed: "Avenir-Light")
+        timerValueNode = SKLabelNode(fontNamed: "Avenir-Bold")
         timerValueNode?.position = CGPoint(x: self.size.width * 0.5, y: -self.size.height * 0.3)
         timerValueNode?.text = "\(String(describing: self.time))"
         timerValueNode?.fontSize = ((size.width) * 0.3)

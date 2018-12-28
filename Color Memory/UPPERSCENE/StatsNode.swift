@@ -34,23 +34,23 @@ class StatsNode: SKSpriteNode{
         newSquaresLabel.text = "SHUFFLE"
         newSquaresLabel.fontSize = ((self.size.height) * 0.35)
         newSquaresLabel.fontColor = UIColor.white
-        newSquaresLabel.position = GameDimension.shuffleLabelPosition(nodeSize: self.size)
+        newSquaresLabel.position = UpperViewDimension.shuffleLabelPosition(nodeSize: self.size)
         
         self.addChild(newSquaresLabel)
     }
     
     func addLifeSquare(){
         
-        let square1 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
-        square1.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square1.size).firstDim
+        let square1 = SKSpriteNode(color: CMColor.cmColorYellow(), size: UpperViewDimension.lifeSquareSize(nodeSize: self.size))
+        square1.position = UpperViewDimension.lifeSquarePosition(nodeSize: size, squareSize: square1.size).firstDim
         square1.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        let square2 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
-        square2.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square2.size).middleDim
+        let square2 = SKSpriteNode(color: CMColor.cmColorYellow(), size: UpperViewDimension.lifeSquareSize(nodeSize: self.size))
+        square2.position = UpperViewDimension.lifeSquarePosition(nodeSize: size, squareSize: square2.size).middleDim
         square2.anchorPoint = CGPoint(x: 0, y: 0.5)
 
-        let square3 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
-        square3.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square3.size).lastDim
+        let square3 = SKSpriteNode(color: CMColor.cmColorYellow(), size: UpperViewDimension.lifeSquareSize(nodeSize: self.size))
+        square3.position = UpperViewDimension.lifeSquarePosition(nodeSize: size, squareSize: square3.size).lastDim
         square3.anchorPoint = CGPoint(x: 0, y: 0.5)
         
         self.addChild(square1)

@@ -41,7 +41,7 @@ class ScoreNode: SKSpriteNode{
         scoreLabelNode.fontSize = ((size.width) * 0.25)
         scoreLabelNode.fontColor = UIColor.black
         
-        scoreValueNode = SKLabelNode(fontNamed: "Avenir-Light")
+        scoreValueNode = SKLabelNode(fontNamed: "Avenir-Bold")
         scoreValueNode?.position = CGPoint(x: self.size.width * 0.5, y: -self.size.height * 0.3)
         scoreValueNode?.text = "\(String(describing: self.score))"
         scoreValueNode?.fontSize = ((size.width) * 0.3)
