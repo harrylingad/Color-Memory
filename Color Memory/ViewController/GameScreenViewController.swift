@@ -16,14 +16,13 @@ class GameScreenViewController: UIViewController, SquareProtocol {
     @IBOutlet weak var statsView: SKView!
     var upperScene: UpperMenuScene?
     
-    
-    
-    
     @IBOutlet weak var lowerSceneView: SKView!
     var lowerScene: LowerScene?
     
     @IBOutlet weak var sceneView: SKView!
     var scene:SquareScene?
+    
+    
     var score: Int?
     
     override func viewDidLoad() {
@@ -36,6 +35,7 @@ class GameScreenViewController: UIViewController, SquareProtocol {
         score = 0
         self.scene = SquareScene(size: self.sceneView.frame.size, score: self.score!, squareCount: setCountOfSquare(squareCount: score!))
         self.scene?.squareProtocolDelegate = self
+        
         self.sceneView.presentScene(scene)
         
         

@@ -21,7 +21,7 @@ class ScoreNode: SKSpriteNode{
     }
     
     init(){
-        super.init(texture: nil, color: UIColor.gray, size: CGSize(width: 0, height: 0))
+        super.init(texture: nil, color: CMColor.cmColorBlue() , size: CGSize(width: 0, height: 0))
         self.score = 0
         self.scoreValueNode = SKLabelNode()
         
@@ -29,8 +29,7 @@ class ScoreNode: SKSpriteNode{
     
 
     init(size: CGSize, score: Int){
-        
-        super.init(texture: nil, color: UIColor.gray, size: size)
+        super.init(texture: nil, color: CMColor.cmColorBlue(), size: size)
         
         self.score = score
         

@@ -61,7 +61,7 @@ class SquareScene: SKScene{
     
     init(size: CGSize, score: Int, squareCount: Int) {
         super.init(size: size)
-        self.backgroundColor = UIColor.black
+        self.backgroundColor = CMColor.cmColorBlack()
         self.score = score
         
         self.squareCount = 4//squareCount

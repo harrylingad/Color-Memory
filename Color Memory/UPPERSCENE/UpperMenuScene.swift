@@ -29,11 +29,11 @@ class UpperMenuScene: SKScene{
         self.backgroundColor = UIColor.white
         self.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        statsNode = StatsNode(texture: nil, color: UIColor.red, size: GameDimension.statsNodeSize(nodeSize: size))
+        statsNode = StatsNode(texture: nil, color: CMColor.cmColorLightGreen() , size: GameDimension.statsNodeSize(nodeSize: size))
         statsNode?.position = GameDimension.statsNodeDimension(nodeSize: size)
         statsNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        levelNode = LevelNode(texture: nil, color: UIColor.gray, size: GameDimension.levelNodeSize(nodeSize: size) )
+        levelNode = LevelNode(texture: nil, color: CMColor.cmColorBlue(), size: GameDimension.levelNodeSize(nodeSize: size) )
         levelNode?.position = GameDimension.levelNodeDimension(nodeSize: size)
         levelNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         

@@ -129,11 +129,11 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-Xn-cE5" customClass="SKView">
                                 <rect key="frame" x="0.0" y="187.5" width="375" height="333.5"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86923497915267944" green="0.047150351107120514" blue="0.032491408288478851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOO-h2-jLg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="67.5"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55A-tN-bNM" customClass="SKView">
                                 <rect key="frame" x="0.0" y="520" width="375" height="166.5"/>

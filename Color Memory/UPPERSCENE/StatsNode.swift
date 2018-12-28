@@ -41,15 +41,15 @@ class StatsNode: SKSpriteNode{
     
     func addLifeSquare(){
         
-        let square1 = SKSpriteNode(color: UIColor.blue, size: GameDimension.lifeSquareSize(nodeSize: self.size))
+        let square1 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
         square1.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square1.size).firstDim
         square1.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        let square2 = SKSpriteNode(color: UIColor.blue, size: GameDimension.lifeSquareSize(nodeSize: self.size))
+        let square2 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
         square2.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square2.size).middleDim
         square2.anchorPoint = CGPoint(x: 0, y: 0.5)
 
-        let square3 = SKSpriteNode(color: UIColor.blue, size: GameDimension.lifeSquareSize(nodeSize: self.size))
+        let square3 = SKSpriteNode(color: CMColor.cmColorYellow(), size: GameDimension.lifeSquareSize(nodeSize: self.size))
         square3.position = GameDimension.lifeSquareDimension(nodeSize: size, squareSize: square3.size).lastDim
         square3.anchorPoint = CGPoint(x: 0, y: 0.5)
         

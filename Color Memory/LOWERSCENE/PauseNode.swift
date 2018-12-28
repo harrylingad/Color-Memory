@@ -17,14 +17,14 @@ class PauseNode: SKSpriteNode{
     }
     
     init(){
-        super.init(texture: nil, color: UIColor.green, size: CGSize(width: 0, height: 0))
+        super.init(texture: nil, color: CMColor.cmColorRed(), size: CGSize(width: 0, height: 0))
         
     }
     
     
     init(size: CGSize){
         
-        super.init(texture: nil, color: UIColor.green, size: size)
+        super.init(texture: nil, color: CMColor.cmColorViolet(), size: size)
         let timerLabelNode = SKLabelNode(fontNamed: "Avenir-Light")
         timerLabelNode.position = CGPoint(x: self.size.width * 0.5, y: -(self.size.height * 0.75))
         timerLabelNode.text = "PAUSE"

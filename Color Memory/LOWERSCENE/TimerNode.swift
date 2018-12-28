@@ -29,7 +29,7 @@ class TimerNode: SKSpriteNode{
     
     init(size: CGSize, time: Int){
         
-        super.init(texture: nil, color: UIColor.gray, size: size)
+        super.init(texture: nil, color: CMColor.cmColorOrange(), size: size)
         
         self.time = time
         

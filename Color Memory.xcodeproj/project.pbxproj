@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3034BBFAD8893BECA4ED2CA3 /* Pods_Color_MemoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC1D5757570385AB7DCD9F0 /* Pods_Color_MemoryUITests.framework */; };
+		3C05A57621D4DE33006BDF4F /* CMColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A57521D4DE33006BDF4F /* CMColor.swift */; };
 		3C0DB74421CE26A400F78E1E /* LowerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DB74321CE26A400F78E1E /* LowerScene.swift */; };
 		3C0DB74621CE29A800F78E1E /* TimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DB74521CE29A800F78E1E /* TimerNode.swift */; };
 		3C0DB74821CE2A6F00F78E1E /* LowerViewDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DB74721CE2A6F00F78E1E /* LowerViewDimension.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		0B1BCCD26A55F7D7AE80B6B3 /* Pods-Color Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color Memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color Memory/Pods-Color Memory.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDF8CD5A796818FA33F8C94 /* Pods-Color MemoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color MemoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color MemoryTests/Pods-Color MemoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C05A57521D4DE33006BDF4F /* CMColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMColor.swift; sourceTree = "<group>"; };
 		3C0DB74321CE26A400F78E1E /* LowerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerScene.swift; sourceTree = "<group>"; };
 		3C0DB74521CE29A800F78E1E /* TimerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNode.swift; sourceTree = "<group>"; };
 		3C0DB74721CE2A6F00F78E1E /* LowerViewDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerViewDimension.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				3C14CFBB21C4689D0098232C /* Assets.xcassets */,
 				3C14CFBD21C4689D0098232C /* LaunchScreen.storyboard */,
 				3C14CFC021C4689D0098232C /* Info.plist */,
+				3C05A57521D4DE33006BDF4F /* CMColor.swift */,
 			);
 			path = "Color Memory";
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				3C6D8ABA21C48D13007F4644 /* LifeNode.swift in Sources */,
 				3C6D8ABC21C48D22007F4644 /* ScoreNode.swift in Sources */,
 				3C6D8ACD21C49168007F4644 /* MenuSquareObject.swift in Sources */,
+				3C05A57621D4DE33006BDF4F /* CMColor.swift in Sources */,
 				3C6D8ABE21C48D3C007F4644 /* UserStat.swift in Sources */,
 				3CD8DDA121D3860B007D1B5C /* PauseNode.swift in Sources */,
 				3C0DB74821CE2A6F00F78E1E /* LowerViewDimension.swift in Sources */,
