@@ -10,10 +10,17 @@ import Foundation
 
 import SpriteKit
 
+
+protocol TimerNodeProtocol{
+    func hideMemorizingTimer()
+}
+
 class TimerNode: SKSpriteNode{
     
     var timerValueNode: SKLabelNode?
     var time: Int = 0
+    var counterTimer: Timer?
+    var timerProtocol: TimerNodeProtocol?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,9 +28,6 @@ class TimerNode: SKSpriteNode{
     
     init(){
         super.init(texture: nil, color: UIColor.gray, size: CGSize(width: 0, height: 0))
-        self.time = 0
-        self.timerValueNode = SKLabelNode()
-        
     }
     
     
@@ -32,9 +36,6 @@ class TimerNode: SKSpriteNode{
         super.init(texture: nil, color: CMColor.cmColorOrange(), size: size)
         
         self.time = time
-        
-        
-        
         let timerLabelNode = SKLabelNode(fontNamed: "Avenir-Light")
         timerLabelNode.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.1)
         timerLabelNode.text = "TIMER"
@@ -50,11 +51,70 @@ class TimerNode: SKSpriteNode{
         self.addChild(timerLabelNode)
         self.addChild(timerValueNode!)
         
+        startCountingInMemorizing()
     }
     
-    func setTime(time: Int){
+    
+    //MARK: - MEMORIZING
+    func setTimeMemorizing(time: Int){
+        self.time = time
+        if time > 5{
+            self.timerValueNode?.text = "5"
+        }else{
+            self.timerValueNode?.text = "\(self.time)"
+        }
+    }
+    
+    func startCountingInMemorizing(){
+        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerMemorizing), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimerMemorizing(){
+        
+        if time <= 0{
+            if counterTimer != nil {
+                counterTimer?.invalidate()
+                counterTimer = nil
+            }
+            timerProtocol?.hideMemorizingTimer()
+        }else{
+            time -= 1
+            setTimeMemorizing(time: time)
+        }
+    }
+    
+    
+    
+    
+    
+    //MARK: - REARRANGING
+    
+    func startCountingInRearranging(){
+        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerRearranging), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimerRearranging(){
+        
+        if time <= 0{
+            if counterTimer != nil {
+                counterTimer?.invalidate()
+                counterTimer = nil
+            }
+            //timerProtocol?.hideMemorizingTimer()
+        }else{
+            time -= 1
+            setTimeRearranging(time: time)
+        }
+    }
+    
+    func setTimeRearranging(time: Int){
         self.time = time
         self.timerValueNode?.text = "\(self.time)"
     }
+    
+    
+    
+    
+    
 }
 

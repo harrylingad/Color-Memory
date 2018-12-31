@@ -62,29 +62,33 @@ class EasingMovement{
     
     
     static func moveNodeWithCompletion(originalNode: SquareNode, newPosition: CGPoint, completion: @escaping ()->Void){
-        
-        
         originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
                                      easeType: .easeTypeOut,
                                      time: 3,
                                      from: originalNode.position,
                                      to: newPosition), completion: {
-                                        
                                         originalNode.origPosition = newPosition
                                         completion()
         })
     }
     
     static func moveNode(originalNode: SquareNode, newPosition: CGPoint){
-        
-        
         originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
                                      easeType: .easeTypeOut,
                                      time: 3,
                                      from: originalNode.position,
                                      to: newPosition), completion: {
-                                        
                                         originalNode.origPosition = newPosition
+        })
+    }
+    
+    static func moveNode(originalNode: SKSpriteNode, newPosition: CGPoint, completion: @escaping ()->Void){
+        originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
+                                     easeType: .easeTypeOut,
+                                     time: 3,
+                                     from: originalNode.position,
+                                     to: newPosition), completion: {
+                                        completion()
         })
     }
     
@@ -92,9 +96,6 @@ class EasingMovement{
     static func moveNode2(squares: [SquareNode], newPositionArray: [CGPoint], newID: [Int], completion: @escaping ()->Void) -> [SKAction]{
         
         var actions = [SKAction]()
-        
-        
-        
         
         for square in squares{
             let newAction = SKAction.run {

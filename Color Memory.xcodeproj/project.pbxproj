@@ -35,7 +35,6 @@
 		3C6D8AC321C48E3C007F4644 /* EasingMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8AC221C48E3B007F4644 /* EasingMovement.swift */; };
 		3C6D8ACB21C49111007F4644 /* LevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8ACA21C49111007F4644 /* LevelNode.swift */; };
 		3C6D8ACD21C49168007F4644 /* MenuSquareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8ACC21C49168007F4644 /* MenuSquareObject.swift */; };
-		3C6D8ACF21C4918B007F4644 /* MemorySquareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8ACE21C4918B007F4644 /* MemorySquareObject.swift */; };
 		3C6D8ADB21C494D0007F4644 /* orange.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AD121C494CE007F4644 /* orange.jpg */; };
 		3C6D8ADC21C494D0007F4644 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AD221C494CF007F4644 /* white.png */; };
 		3C6D8ADD21C494D0007F4644 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AD321C494CF007F4644 /* yellow.png */; };
@@ -46,6 +45,7 @@
 		3C6D8AE221C494D0007F4644 /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AD821C494D0007F4644 /* blue.jpg */; };
 		3C6D8AE321C494D0007F4644 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AD921C494D0007F4644 /* green.jpg */; };
 		3C6D8AE421C494D0007F4644 /* violet.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8ADA21C494D0007F4644 /* violet.png */; };
+		3CCD9F6921D735FD004840F7 /* MemorySquareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD9F6821D735FD004840F7 /* MemorySquareObject.swift */; };
 		3CD8DDA121D3860B007D1B5C /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8DDA021D3860B007D1B5C /* PauseNode.swift */; };
 		3CD8DDA321D3A0E2007D1B5C /* RefreshNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8DDA221D3A0E2007D1B5C /* RefreshNode.swift */; };
 		3CEF5D7821C4DF9400CFAC3D /* UpperMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEF5D7721C4DF9400CFAC3D /* UpperMenuScene.swift */; };
@@ -106,7 +106,6 @@
 		3C6D8AC221C48E3B007F4644 /* EasingMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasingMovement.swift; sourceTree = "<group>"; };
 		3C6D8ACA21C49111007F4644 /* LevelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelNode.swift; sourceTree = "<group>"; };
 		3C6D8ACC21C49168007F4644 /* MenuSquareObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSquareObject.swift; sourceTree = "<group>"; };
-		3C6D8ACE21C4918B007F4644 /* MemorySquareObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemorySquareObject.swift; path = "../../AlzeimerMonster/AlzeimerMonster/New Group/MemorySquareObject.swift"; sourceTree = "<group>"; };
 		3C6D8AD121C494CE007F4644 /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orange.jpg; sourceTree = "<group>"; };
 		3C6D8AD221C494CF007F4644 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		3C6D8AD321C494CF007F4644 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		3C6D8AD821C494D0007F4644 /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
 		3C6D8AD921C494D0007F4644 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
 		3C6D8ADA21C494D0007F4644 /* violet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violet.png; sourceTree = "<group>"; };
+		3CCD9F6821D735FD004840F7 /* MemorySquareObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySquareObject.swift; sourceTree = "<group>"; };
 		3CD8DDA021D3860B007D1B5C /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		3CD8DDA221D3A0E2007D1B5C /* RefreshNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshNode.swift; sourceTree = "<group>"; };
 		3CEF5D7721C4DF9400CFAC3D /* UpperMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperMenuScene.swift; sourceTree = "<group>"; };
@@ -202,9 +202,9 @@
 				3C6D8AC121C48E25007F4644 /* Movement */,
 				3C6D8AB821C48D04007F4644 /* Nodes */,
 				3C6D8AB621C48CC1007F4644 /* InstructionLabelNode.swift */,
+				3CCD9F6821D735FD004840F7 /* MemorySquareObject.swift */,
 				3C6D8AB021C48B96007F4644 /* SquareNode.swift */,
 				3C6D8ACC21C49168007F4644 /* MenuSquareObject.swift */,
-				3C6D8ACE21C4918B007F4644 /* MemorySquareObject.swift */,
 				3C6D8AAE21C48B6E007F4644 /* GameAsset.swift */,
 				3C6D8AA121C48841007F4644 /* CustomUI */,
 				3C6D8A9F21C48786007F4644 /* MenuScene.swift */,
@@ -619,6 +619,7 @@
 				3CD8DDA321D3A0E2007D1B5C /* RefreshNode.swift in Sources */,
 				3C6164FB21C7C4B5000370A5 /* UpperViewDimension.swift in Sources */,
 				3C0DB74421CE26A400F78E1E /* LowerScene.swift in Sources */,
+				3CCD9F6921D735FD004840F7 /* MemorySquareObject.swift in Sources */,
 				3C606B0321C5F532006215F0 /* StatsNode.swift in Sources */,
 				3C14CFB721C4689D0098232C /* GameScreenViewController.swift in Sources */,
 				3C6D8ABA21C48D13007F4644 /* LifeNode.swift in Sources */,
@@ -636,7 +637,6 @@
 				3C6D8AC321C48E3C007F4644 /* EasingMovement.swift in Sources */,
 				3C6D8AC021C48D55007F4644 /* LevelOneSquare.swift in Sources */,
 				3C6D8AA021C48786007F4644 /* MenuScene.swift in Sources */,
-				3C6D8ACF21C4918B007F4644 /* MemorySquareObject.swift in Sources */,
 				3C6D8A9E21C48647007F4644 /* MenuViewController.swift in Sources */,
 				3C14CFB521C4689D0098232C /* AppDelegate.swift in Sources */,
 				3C6D8AB121C48B97007F4644 /* SquareNode.swift in Sources */,

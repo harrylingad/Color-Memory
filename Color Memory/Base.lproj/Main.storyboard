@@ -83,8 +83,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <state key="normal" title="CONTINUE"/>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-Rx-LW4" customClass="SKView">
-                                <rect key="frame" x="0.0" y="142" width="375" height="254"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-Rx-LW4" customClass="SKView">
+                                <rect key="frame" x="15" y="149" width="345" height="260"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -94,9 +94,9 @@
                             <constraint firstItem="D9Z-FO-CNE" firstAttribute="top" secondItem="aC2-Y5-0vf" secondAttribute="bottom" constant="20" id="38L-CM-XPC"/>
                             <constraint firstItem="aC2-Y5-0vf" firstAttribute="centerX" secondItem="DS3-XT-s03" secondAttribute="centerX" id="6ya-gA-Big"/>
                             <constraint firstItem="tEp-Li-p86" firstAttribute="centerX" secondItem="DS3-XT-s03" secondAttribute="centerX" id="HFa-XX-oTX"/>
-                            <constraint firstItem="jQT-Rx-LW4" firstAttribute="leading" secondItem="BDa-Jh-ryL" secondAttribute="leading" id="KrN-gY-wZ1"/>
+                            <constraint firstItem="jQT-Rx-LW4" firstAttribute="leading" secondItem="BDa-Jh-ryL" secondAttribute="leading" constant="15" id="KrN-gY-wZ1"/>
                             <constraint firstItem="aC2-Y5-0vf" firstAttribute="width" secondItem="DS3-XT-s03" secondAttribute="width" multiplier="0.8" id="aIA-Rk-k19"/>
-                            <constraint firstItem="BDa-Jh-ryL" firstAttribute="trailing" secondItem="jQT-Rx-LW4" secondAttribute="trailing" id="cFN-9L-c1b"/>
+                            <constraint firstItem="BDa-Jh-ryL" firstAttribute="trailing" secondItem="jQT-Rx-LW4" secondAttribute="trailing" constant="15" id="cFN-9L-c1b"/>
                             <constraint firstItem="jQT-Rx-LW4" firstAttribute="centerX" secondItem="DS3-XT-s03" secondAttribute="centerX" id="g26-Ta-hmo"/>
                             <constraint firstItem="aC2-Y5-0vf" firstAttribute="top" secondItem="jQT-Rx-LW4" secondAttribute="bottom" constant="30" id="lZI-Uo-uQS"/>
                             <constraint firstItem="D9Z-FO-CNE" firstAttribute="centerX" secondItem="DS3-XT-s03" secondAttribute="centerX" id="mIr-H4-6mW"/>
@@ -128,7 +128,7 @@
                                 <color key="backgroundColor" red="0.95903736350000002" green="0.86993676419999999" blue="0.96588617560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-Xn-cE5" customClass="SKView">
-                                <rect key="frame" x="0.0" y="187.5" width="375" height="333.5"/>
+                                <rect key="frame" x="25" y="187.5" width="325" height="333.5"/>
                                 <color key="backgroundColor" red="0.86923497915267944" green="0.047150351107120514" blue="0.032491408288478851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOO-h2-jLg">
@@ -159,9 +159,9 @@
                             <constraint firstItem="55A-tN-bNM" firstAttribute="leading" secondItem="tjP-7u-xO3" secondAttribute="leading" id="RZF-aK-7uX"/>
                             <constraint firstItem="ARt-gt-Nhf" firstAttribute="leading" secondItem="tjP-7u-xO3" secondAttribute="leading" id="TsY-rZ-KKy"/>
                             <constraint firstItem="KOO-h2-jLg" firstAttribute="height" secondItem="jGf-1Z-A8o" secondAttribute="height" multiplier="0.1" id="WZG-w4-bg2"/>
-                            <constraint firstItem="tjP-7u-xO3" firstAttribute="trailing" secondItem="dqf-Xn-cE5" secondAttribute="trailing" id="bus-Tw-x4B"/>
+                            <constraint firstItem="tjP-7u-xO3" firstAttribute="trailing" secondItem="dqf-Xn-cE5" secondAttribute="trailing" constant="25" id="bus-Tw-x4B"/>
                             <constraint firstItem="tjP-7u-xO3" firstAttribute="trailing" secondItem="ARt-gt-Nhf" secondAttribute="trailing" id="cBy-5c-sdK"/>
-                            <constraint firstItem="dqf-Xn-cE5" firstAttribute="leading" secondItem="tjP-7u-xO3" secondAttribute="leading" id="cSG-CC-TgR"/>
+                            <constraint firstItem="dqf-Xn-cE5" firstAttribute="leading" secondItem="tjP-7u-xO3" secondAttribute="leading" constant="25" id="cSG-CC-TgR"/>
                             <constraint firstItem="ARt-gt-Nhf" firstAttribute="top" secondItem="KOO-h2-jLg" secondAttribute="bottom" id="chN-Tr-Nfh"/>
                             <constraint firstItem="KOO-h2-jLg" firstAttribute="leading" secondItem="tjP-7u-xO3" secondAttribute="leading" id="drU-bP-tXV"/>
                             <constraint firstItem="55A-tN-bNM" firstAttribute="top" secondItem="dqf-Xn-cE5" secondAttribute="bottom" id="he3-Fm-x3h"/>

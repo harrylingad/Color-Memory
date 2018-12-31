@@ -248,13 +248,7 @@ class SquareScene: SKScene{
                 }else{
                     EasingMovement.moveNode(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!])
                 }
-                
-                
-                
-                
-                
-                
-                
+    
             }
             if self.rumbleCount <= 1{
                 startCountingInArranging()
@@ -348,9 +342,6 @@ class SquareScene: SKScene{
     }
     
     
-    
-    
-    
     //MARK: - OVERRIDE FUNCTIONS
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -412,7 +403,6 @@ class SquareScene: SKScene{
     
     func scaleSquare(node: SKSpriteNode){
         
-        
         for square in (levelOne?.squares)!{
             square.run(SKEase.scale(easeFunction: .curveTypeElastic, easeType: .easeTypeOut, time: 1, from: 1, to: 1))
             square.zPosition = -1
@@ -443,7 +433,6 @@ class SquareScene: SKScene{
                 counterTimer?.invalidate()
                 counterTimer = nil
             }
-            
             
             self.squareProtocolDelegate?.showDialog(isCorrect: false)
             countDownLNGroup?.memorizeInLN?.text = ""
