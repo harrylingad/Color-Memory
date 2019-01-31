@@ -12,14 +12,22 @@ import GameplayKit
 import SpriteKitEasingSwift
 
 
+protocol RearrangingProtocol {
+    func startRearranging()
+    
+}
 
 class LowerScene: SKScene, TimerNodeProtocol{
+
+    
     
     
     var statsNode: StatsNode?
     var timerNode: TimerNode?
     var pauseNode: PauseNode?
     var refreshNode: RefreshNode?
+    var rearrangingDelegate: RearrangingProtocol?
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -66,16 +74,17 @@ class LowerScene: SKScene, TimerNodeProtocol{
         EasingMovement.moveNode(originalNode: refreshNode!, newPosition: LowerViewDimension.refreshNodePosition!, completion: {})
     }
     
-    //MARK: - PAUSENODE
+    
     func showPauseNode(){
         EasingMovement.moveNode(originalNode: pauseNode!, newPosition: LowerViewDimension.pauseNodePosition!, completion: {})
     }
     
-    //MARK: - TIMERNODE
-    
+    //MARK: - TIMERNODEProtocol delegate
     func hideMemorizingTimer(){
         EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodeIntPosition!, completion: {
-            self.showMemorizingTimer()
+            
+            self.rearrangingDelegate?.startRearranging()
+            //self.showMemorizingTimer()
         })
     }
     
@@ -88,6 +97,39 @@ class LowerScene: SKScene, TimerNodeProtocol{
         EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodePosition!, completion: {
             self.timerNode?.startCountingInRearranging()
         })
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+    
+    // OVERRIDE METHOD
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        if (pauseNode?.contains(touch.location(in: self)))! {
+            pauseNode?.pressed()
+        }else if (refreshNode?.contains(touch.location(in: self)))! {
+            refreshNode?.pressed()
+        }
+    }
+    
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        if (pauseNode?.contains(touch.location(in: self)))! {
+            pauseNode?.unPressed()
+        }else if (refreshNode?.contains(touch.location(in: self)))! {
+            refreshNode?.unPressed()
+        }
     }
     
     

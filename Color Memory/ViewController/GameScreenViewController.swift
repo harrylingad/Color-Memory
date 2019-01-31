@@ -11,8 +11,12 @@ import SpriteKit
 import SpriteKitEasingSwift
 import SimpleAlert
 
-class GameScreenViewController: UIViewController, SquareProtocol {
+class GameScreenViewController: UIViewController, SquareProtocol, RearrangingProtocol, ShowNodeProtocol, NoMoreTimeProtocol, PauseNodeProtocol {
+ 
     
+
+    
+
     @IBOutlet weak var navigationView: UIView!
     
     
@@ -40,11 +44,15 @@ class GameScreenViewController: UIViewController, SquareProtocol {
         score = 0
         self.scene = SquareScene(size: self.sceneView.frame.size, score: self.score!, squareCount: setCountOfSquare(squareCount: score!))
         self.scene?.squareProtocolDelegate = self
-        
+        self.scene?.showNodesDelegate = self
         self.sceneView.presentScene(scene)
         
         
         self.lowerScene = LowerScene(size: self.lowerSceneView.frame.size)
+        self.lowerScene?.rearrangingDelegate = self
+        self.lowerScene?.timerNode?.noMoreTimeDelegate = self
+        self.lowerScene?.pauseNode?.pauseNodeDelegate = self
+        
         self.lowerSceneView.presentScene(lowerScene)
         
     }
@@ -62,6 +70,11 @@ class GameScreenViewController: UIViewController, SquareProtocol {
         }
     }
     
+    func pauseRearrangeTimer() {
+        showPauseDialog()
+        self.lowerScene?.timerNode?.pauseRearrangeTime()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,41 +82,62 @@ class GameScreenViewController: UIViewController, SquareProtocol {
     }
     
     func showCorrectDialog(){
+    
         
-//        let correctDialogView = CorrectDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
-//
-//        let alert = AlertController(view: correctDialogView, style: .alert)
-//
-//        let action = AlertAction(title: "Continue", style: .ok) { action in
-//            self.goToNextMemoryScreen()
-//        }
-//
-//        alert.addAction(action)
-//        action.button.frame.size.height = 50
-//        action.button.backgroundColor = UIColor.blue
-//        action.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
-//        action.button.setTitleColor(UIColor.red, for: .normal)
-//
-//        present(alert, animated: true, completion: nil)
+        let correctDialogView = CorrectDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
+
+        let alert = AlertController(view: correctDialogView, style: .alert)
+
+        let action = AlertAction(title: "Continue", style: .ok) { action in
+            self.goToNextMemoryScreen()
+        }
+
+        alert.addAction(action)
+        action.button.frame.size.height = 50
+        action.button.backgroundColor = CMColor.cmColorBlue()
+        
+        action.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
+        action.button.setTitleColor(UIColor.black, for: .normal)
+
+        present(alert, animated: true, completion: nil)
         
         
     }
     
     func showWrongDialog(){
         
-//        let wrongDialogView = WrongDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
-//        let alert = AlertController(view: wrongDialogView, style: .alert)
-//        let action = AlertAction(title: "Try Again", style: .ok) { action in
-//            self.tryAgainScreen()
-//        }
-//
-//        alert.addAction(action)
-//        action.button.frame.size.height = 50
-//        action.button.backgroundColor = UIColor.blue
-//        action.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
-//        action.button.setTitleColor(UIColor.red, for: .normal)
-//
-//        present(alert, animated: true, completion: nil)
+        let wrongDialogView = WrongDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
+        let alert = AlertController(view: wrongDialogView, style: .alert)
+        let action = AlertAction(title: "Try Again", style: .ok) { action in
+            self.tryAgainScreen()
+        }
+
+        alert.addAction(action)
+        action.button.frame.size.height = 50
+        action.button.backgroundColor = UIColor.blue
+        action.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
+        action.button.setTitleColor(UIColor.red, for: .normal)
+
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func showPauseDialog(){
+        
+        let pauseDialogView = PauseDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
+        let alert = AlertController(view: pauseDialogView, style: .alert)
+        let action = AlertAction(title: "Resume", style: .ok) { action in
+            self.resumeGame()
+        }
+        
+        alert.addAction(action)
+        action.button.frame.size.height = 50
+        action.button.backgroundColor = UIColor.blue
+        action.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 35)
+        action.button.setTitleColor(UIColor.red, for: .normal)
+        
+        present(alert, animated: true, completion: nil)
         
         
     }
@@ -130,6 +164,11 @@ class GameScreenViewController: UIViewController, SquareProtocol {
     }
     
     
+    func resumeGame(){
+        self.lowerScene?.timerNode?.pauseRearrangeTime()
+    }
+    
+    
     
     
     func setCountOfSquare(squareCount: Int) -> Int{
@@ -148,6 +187,24 @@ class GameScreenViewController: UIViewController, SquareProtocol {
     
     override var prefersStatusBarHidden: Bool{
         return true
+    }
+    
+    //MARK: - ShowNodeProtocol
+    func showNodes() {
+        upperScene?.showStats()
+        upperScene?.showLevel()
+        upperScene?.showScore()
+        
+        lowerScene?.showMemorizingTimer()
+    }
+
+    
+    func startRearranging() {
+        scene?.rumbleSquare()
+    }
+    
+    func noMoreTime() {
+        showWrongDialog()
     }
     
     

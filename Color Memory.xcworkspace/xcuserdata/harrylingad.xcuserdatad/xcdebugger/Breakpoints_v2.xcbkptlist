@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color Memory/ViewController/GameScreenViewController.swift"
-            timestampString = "567673179.994988"
+            timestampString = "570636706.433949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "showCorrectDialog()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Color Memory/LOWERSCENE/TimerNode.swift"
-            timestampString = "567923640.378927"
+            timestampString = "570636706.434847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "updateTimerRearranging()"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "pauseRearrangeTime()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Color Memory/LOWERSCENE/TimerNode.swift"
-            timestampString = "567923640.378991"
+            filePath = "Color Memory/LOWERSCENE/PauseNode.swift"
+            timestampString = "570636501.792864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "startCountingInRearranging()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "unPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -15,12 +15,18 @@ protocol TimerNodeProtocol{
     func hideMemorizingTimer()
 }
 
+protocol NoMoreTimeProtocol {
+    func noMoreTime()
+}
+
 class TimerNode: SKSpriteNode{
     
     var timerValueNode: SKLabelNode?
     var time: Int = 0
     var counterTimer: Timer?
+    var isTimerPaused: Bool = false
     var timerProtocol: TimerNodeProtocol?
+    var noMoreTimeDelegate: NoMoreTimeProtocol?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,7 +48,7 @@ class TimerNode: SKSpriteNode{
         timerLabelNode.fontSize = ((size.width) * 0.25)
         timerLabelNode.fontColor = UIColor.black
         
-        timerValueNode = SKLabelNode(fontNamed: "Avenir-Bold")
+        timerValueNode = SKLabelNode(fontNamed: "Avenir-Heavy")
         timerValueNode?.position = CGPoint(x: self.size.width * 0.5, y: -self.size.height * 0.3)
         timerValueNode?.text = "\(String(describing: self.time))"
         timerValueNode?.fontSize = ((size.width) * 0.3)
@@ -87,8 +93,7 @@ class TimerNode: SKSpriteNode{
     
     
     
-    //MARK: - REARRANGING
-    
+    //MARK: - REARRANGINg
     func startCountingInRearranging(){
         counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerRearranging), userInfo: nil, repeats: true)
     }
@@ -100,6 +105,8 @@ class TimerNode: SKSpriteNode{
                 counterTimer?.invalidate()
                 counterTimer = nil
             }
+            print("no more time")
+            noMoreTimeDelegate?.noMoreTime()
             //timerProtocol?.hideMemorizingTimer()
         }else{
             time -= 1
@@ -111,6 +118,18 @@ class TimerNode: SKSpriteNode{
         self.time = time
         self.timerValueNode?.text = "\(self.time)"
     }
+    
+    
+    func pauseRearrangeTime(){
+        if isTimerPaused{
+            counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerRearranging), userInfo: nil, repeats: true)
+            isTimerPaused = false
+        }else{
+            counterTimer?.invalidate()
+            isTimerPaused = true
+        }
+    }
+
     
     
     

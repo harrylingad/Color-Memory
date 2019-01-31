@@ -14,6 +14,7 @@ import SpriteKitEasingSwift
 
 
 class UpperMenuScene: SKScene{
+
     
     
     var statsNode: StatsNode?
@@ -32,16 +33,17 @@ class UpperMenuScene: SKScene{
         UpperViewDimension.initializeUpperViewDimension(nodeSize: size)
         
         statsNode = StatsNode(texture: nil, color: CMColor.cmColorLightGreen() , size: UpperViewDimension.statsNodeSize!)
-        statsNode?.position = UpperViewDimension.statsNodePosition!
+        statsNode?.position = UpperViewDimension.statsNodeIntPosition!
+        //statsNode?.position = UpperViewDimension.statsNodePosition!
         statsNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         
         levelNode = LevelNode(texture: nil, color: CMColor.cmColorBlue(), size: UpperViewDimension.levelNodeSize! )
-        levelNode?.position = UpperViewDimension.levelNodePosition!
+        levelNode?.position = UpperViewDimension.levelNodeIntPosition!
         levelNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         
         
         scoreNode = ScoreNode(size: UpperViewDimension.scoreNodeSize!, score: 0)
-        scoreNode?.position = UpperViewDimension.scoreNodePosition!
+        scoreNode?.position = UpperViewDimension.scoreNodeIntPosition!
         scoreNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         
         
@@ -49,9 +51,23 @@ class UpperMenuScene: SKScene{
         self.addChild(levelNode!)
         self.addChild(scoreNode!)
         
-        
-        
     }
+
+    
+    func showStats(){
+        EasingMovement.moveNode(originalNode: statsNode!, newPosition: UpperViewDimension.statsNodePosition! , completion:{})
+    }
+    
+    func showLevel(){
+        EasingMovement.moveNode(originalNode: levelNode!, newPosition: UpperViewDimension.levelNodePosition! , completion:{})
+    }
+    
+    func showScore(){
+        EasingMovement.moveNode(originalNode: scoreNode!, newPosition: UpperViewDimension.scoreNodePosition! , completion:{})
+    }
+    
+    
+    
     
 
     
