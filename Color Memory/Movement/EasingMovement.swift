@@ -64,7 +64,7 @@ class EasingMovement{
     static func moveNodeWithCompletion(originalNode: SquareNode, newPosition: CGPoint, completion: @escaping ()->Void){
         originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
                                      easeType: .easeTypeOut,
-                                     time: 3,
+                                     time: 1,
                                      from: originalNode.position,
                                      to: newPosition), completion: {
                                         originalNode.origPosition = newPosition
@@ -75,7 +75,7 @@ class EasingMovement{
     static func moveNode(originalNode: SquareNode, newPosition: CGPoint){
         originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
                                      easeType: .easeTypeOut,
-                                     time: 3,
+                                     time: 1,
                                      from: originalNode.position,
                                      to: newPosition), completion: {
                                         originalNode.origPosition = newPosition
@@ -85,7 +85,7 @@ class EasingMovement{
     static func moveNode(originalNode: SKSpriteNode, newPosition: CGPoint, completion: @escaping ()->Void){
         originalNode.run(SKEase.move(easeFunction: .curveTypeQuintic,
                                      easeType: .easeTypeOut,
-                                     time: 3,
+                                     time: 2,
                                      from: originalNode.position,
                                      to: newPosition), completion: {
                                         completion()

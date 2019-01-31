@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3034BBFAD8893BECA4ED2CA3 /* Pods_Color_MemoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC1D5757570385AB7DCD9F0 /* Pods_Color_MemoryUITests.framework */; };
+		3C0487EB21EA2F7F006298E9 /* CorrectDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0487E721EA2F7E006298E9 /* CorrectDialogView.xib */; };
+		3C0487EC21EA2F7F006298E9 /* CorrectDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0487E821EA2F7F006298E9 /* CorrectDialogView.swift */; };
+		3C0487ED21EA2F7F006298E9 /* WrongDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */; };
+		3C0487EE21EA2F7F006298E9 /* WrongDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0487EA21EA2F7F006298E9 /* WrongDialogView.swift */; };
 		3C05A57621D4DE33006BDF4F /* CMColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A57521D4DE33006BDF4F /* CMColor.swift */; };
 		3C0DB74421CE26A400F78E1E /* LowerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DB74321CE26A400F78E1E /* LowerScene.swift */; };
 		3C0DB74621CE29A800F78E1E /* TimerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DB74521CE29A800F78E1E /* TimerNode.swift */; };
@@ -19,11 +23,12 @@
 		3C14CFBF21C4689D0098232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C14CFBD21C4689D0098232C /* LaunchScreen.storyboard */; };
 		3C14CFCA21C4689D0098232C /* Color_MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C14CFC921C4689D0098232C /* Color_MemoryTests.swift */; };
 		3C14CFD521C4689D0098232C /* Color_MemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C14CFD421C4689D0098232C /* Color_MemoryUITests.swift */; };
+		3C207AC72203147D0093479E /* PauseDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C207AC62203147D0093479E /* PauseDialogView.swift */; };
+		3C4000A6220289D600C493CB /* PauseDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C4000A5220289D600C493CB /* PauseDialogView.xib */; };
 		3C606B0321C5F532006215F0 /* StatsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C606B0221C5F532006215F0 /* StatsNode.swift */; };
 		3C6164FB21C7C4B5000370A5 /* UpperViewDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6164FA21C7C4B5000370A5 /* UpperViewDimension.swift */; };
 		3C6D8A9E21C48647007F4644 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8A9D21C48647007F4644 /* MenuViewController.swift */; };
 		3C6D8AA021C48786007F4644 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8A9F21C48786007F4644 /* MenuScene.swift */; };
-		3C6D8AA221C48841007F4644 /* CustomUI in Resources */ = {isa = PBXBuildFile; fileRef = 3C6D8AA121C48841007F4644 /* CustomUI */; };
 		3C6D8AA421C48876007F4644 /* SquareScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8AA321C48876007F4644 /* SquareScene.swift */; };
 		3C6D8AAF21C48B6F007F4644 /* GameAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8AAE21C48B6E007F4644 /* GameAsset.swift */; };
 		3C6D8AB121C48B97007F4644 /* SquareNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D8AB021C48B96007F4644 /* SquareNode.swift */; };
@@ -73,6 +78,10 @@
 /* Begin PBXFileReference section */
 		0B1BCCD26A55F7D7AE80B6B3 /* Pods-Color Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color Memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color Memory/Pods-Color Memory.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDF8CD5A796818FA33F8C94 /* Pods-Color MemoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color MemoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color MemoryTests/Pods-Color MemoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C0487E721EA2F7E006298E9 /* CorrectDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CorrectDialogView.xib; sourceTree = "<group>"; };
+		3C0487E821EA2F7F006298E9 /* CorrectDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectDialogView.swift; sourceTree = "<group>"; };
+		3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WrongDialogView.xib; sourceTree = "<group>"; };
+		3C0487EA21EA2F7F006298E9 /* WrongDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongDialogView.swift; sourceTree = "<group>"; };
 		3C05A57521D4DE33006BDF4F /* CMColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMColor.swift; sourceTree = "<group>"; };
 		3C0DB74321CE26A400F78E1E /* LowerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerScene.swift; sourceTree = "<group>"; };
 		3C0DB74521CE29A800F78E1E /* TimerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNode.swift; sourceTree = "<group>"; };
@@ -90,11 +99,12 @@
 		3C14CFD021C4689D0098232C /* Color MemoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Color MemoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C14CFD421C4689D0098232C /* Color_MemoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_MemoryUITests.swift; sourceTree = "<group>"; };
 		3C14CFD621C4689D0098232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C207AC62203147D0093479E /* PauseDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseDialogView.swift; sourceTree = "<group>"; };
+		3C4000A5220289D600C493CB /* PauseDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseDialogView.xib; sourceTree = "<group>"; };
 		3C606B0221C5F532006215F0 /* StatsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsNode.swift; sourceTree = "<group>"; };
 		3C6164FA21C7C4B5000370A5 /* UpperViewDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperViewDimension.swift; sourceTree = "<group>"; };
 		3C6D8A9D21C48647007F4644 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3C6D8A9F21C48786007F4644 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		3C6D8AA121C48841007F4644 /* CustomUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CustomUI; sourceTree = "<group>"; };
 		3C6D8AA321C48876007F4644 /* SquareScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareScene.swift; sourceTree = "<group>"; };
 		3C6D8AAE21C48B6E007F4644 /* GameAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAsset.swift; sourceTree = "<group>"; };
 		3C6D8AB021C48B96007F4644 /* SquareNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareNode.swift; sourceTree = "<group>"; };
@@ -157,6 +167,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C0487E621EA2F54006298E9 /* CustomDialogView */ = {
+			isa = PBXGroup;
+			children = (
+				3C0487E821EA2F7F006298E9 /* CorrectDialogView.swift */,
+				3C0487E721EA2F7E006298E9 /* CorrectDialogView.xib */,
+				3C0487EA21EA2F7F006298E9 /* WrongDialogView.swift */,
+				3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */,
+				3C4000A5220289D600C493CB /* PauseDialogView.xib */,
+				3C207AC62203147D0093479E /* PauseDialogView.swift */,
+			);
+			path = CustomDialogView;
+			sourceTree = "<group>";
+		};
 		3C0DB74221CE264C00F78E1E /* LOWERSCENE */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +217,7 @@
 		3C14CFB321C4689D0098232C /* Color Memory */ = {
 			isa = PBXGroup;
 			children = (
+				3C0487E621EA2F54006298E9 /* CustomDialogView */,
 				3C6164FC21C7C7F1000370A5 /* UPPERSCENE */,
 				3CEF5D7621C4D96300CFAC3D /* Scenes */,
 				3C0DB74221CE264C00F78E1E /* LOWERSCENE */,
@@ -206,7 +230,6 @@
 				3C6D8AB021C48B96007F4644 /* SquareNode.swift */,
 				3C6D8ACC21C49168007F4644 /* MenuSquareObject.swift */,
 				3C6D8AAE21C48B6E007F4644 /* GameAsset.swift */,
-				3C6D8AA121C48841007F4644 /* CustomUI */,
 				3C6D8A9F21C48786007F4644 /* MenuScene.swift */,
 				3C14CFB421C4689D0098232C /* AppDelegate.swift */,
 				3C14CFB821C4689D0098232C /* Main.storyboard */,
@@ -440,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6D8AE321C494D0007F4644 /* green.jpg in Resources */,
+				3C0487EB21EA2F7F006298E9 /* CorrectDialogView.xib in Resources */,
 				3C14CFBF21C4689D0098232C /* LaunchScreen.storyboard in Resources */,
 				3C6D8ADF21C494D0007F4644 /* dark_green.png in Resources */,
 				3C14CFBC21C4689D0098232C /* Assets.xcassets in Resources */,
@@ -449,8 +473,9 @@
 				3C14CFBA21C4689D0098232C /* Main.storyboard in Resources */,
 				3C6D8ADB21C494D0007F4644 /* orange.jpg in Resources */,
 				3C6D8AE221C494D0007F4644 /* blue.jpg in Resources */,
-				3C6D8AA221C48841007F4644 /* CustomUI in Resources */,
+				3C0487ED21EA2F7F006298E9 /* WrongDialogView.xib in Resources */,
 				3C6D8ADE21C494D0007F4644 /* pink.png in Resources */,
+				3C4000A6220289D600C493CB /* PauseDialogView.xib in Resources */,
 				3C6D8ADC21C494D0007F4644 /* white.png in Resources */,
 				3C6D8ADD21C494D0007F4644 /* yellow.png in Resources */,
 			);
@@ -616,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6D8AA421C48876007F4644 /* SquareScene.swift in Sources */,
+				3C207AC72203147D0093479E /* PauseDialogView.swift in Sources */,
 				3CD8DDA321D3A0E2007D1B5C /* RefreshNode.swift in Sources */,
 				3C6164FB21C7C4B5000370A5 /* UpperViewDimension.swift in Sources */,
 				3C0DB74421CE26A400F78E1E /* LowerScene.swift in Sources */,
@@ -632,6 +658,7 @@
 				3C0DB74621CE29A800F78E1E /* TimerNode.swift in Sources */,
 				3C6D8ACB21C49111007F4644 /* LevelNode.swift in Sources */,
 				3CEF5D7821C4DF9400CFAC3D /* UpperMenuScene.swift in Sources */,
+				3C0487EC21EA2F7F006298E9 /* CorrectDialogView.swift in Sources */,
 				3C6D8AB721C48CC2007F4644 /* InstructionLabelNode.swift in Sources */,
 				3C6D8AAF21C48B6F007F4644 /* GameAsset.swift in Sources */,
 				3C6D8AC321C48E3C007F4644 /* EasingMovement.swift in Sources */,
@@ -640,6 +667,7 @@
 				3C6D8A9E21C48647007F4644 /* MenuViewController.swift in Sources */,
 				3C14CFB521C4689D0098232C /* AppDelegate.swift in Sources */,
 				3C6D8AB121C48B97007F4644 /* SquareNode.swift in Sources */,
+				3C0487EE21EA2F7F006298E9 /* WrongDialogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

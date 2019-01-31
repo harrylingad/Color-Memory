@@ -11,10 +11,29 @@ import UIKit
 
 
 class CMColor{
-    
-    static func cmColorBlue() -> UIColor{
-        return UIColor(red: CGFloat(0x2b)/255, green: CGFloat(0x97)/255, blue: CGFloat(0xef)/255, alpha: 1.0)
+    //03a9f4
+    static func cmColorLightBlue() -> UIColor{
+        return UIColor(red: CGFloat(0x03)/255, green: CGFloat(0xa9)/255, blue: CGFloat(0xf4)/255, alpha: 1.0)
     }
+    
+    //3d50b3
+    static func cmColorDarkBlue() -> UIColor{
+        return UIColor(red: CGFloat(0x3d)/255, green: CGFloat(0x50)/255, blue: CGFloat(0xb3)/255, alpha: 1.0)
+    }
+    
+    //2095f1
+    static func cmColorBlue() -> UIColor{
+        return UIColor(red: CGFloat(0x20)/255, green: CGFloat(0x95)/255, blue: CGFloat(0xef1)/255, alpha: 1.0)
+    }
+
+    //02bcd4
+    static func cmColorOceanBlue() -> UIColor{
+        return UIColor(red: CGFloat(0x02)/255, green: CGFloat(0xbc)/255, blue: CGFloat(0xed4)/255, alpha: 1.0)
+    }
+    
+//    static func cmColorBlue() -> UIColor{
+//        return UIColor(red: CGFloat(0x2b)/255, green: CGFloat(0x97)/255, blue: CGFloat(0xef)/255, alpha: 1.0)
+//    }
     
     
     static func cmColorLightGreen() -> UIColor{
@@ -37,6 +56,11 @@ class CMColor{
     
     static func cmColorViolet() -> UIColor{
         return UIColor(red: CGFloat(0x9b)/255, green: CGFloat(0x59)/255, blue: CGFloat(0xb6)/255, alpha: 1.0)
+    }
+    
+    //673ab7
+    static func cmColorDarkViolet() -> UIColor{
+        return UIColor(red: CGFloat(0x67)/255, green: CGFloat(0x3a)/255, blue: CGFloat(0xb7)/255, alpha: 1.0)
     }
     
     static func cmColorBlack() -> UIColor{

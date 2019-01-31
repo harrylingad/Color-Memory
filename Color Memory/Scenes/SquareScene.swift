@@ -1,4 +1,4 @@
-//
+
 //  SquareScene.swift
 //  AlzeimerMonster
 //
@@ -14,9 +14,14 @@ import SpriteKitEasingSwift
 
 
 protocol SquareProtocol{
-    
     func showDialog(isCorrect: Bool)
 }
+
+protocol ShowNodeProtocol{
+    func showNodes()
+}
+
+
 
 class SquareScene: SKScene{
     
@@ -25,6 +30,7 @@ class SquareScene: SKScene{
     var titleLabel: SKLabelNode?
     
     var squareProtocolDelegate: SquareProtocol?
+    var showNodesDelegate: ShowNodeProtocol?
     
     var score: Int?
     var squareCount: Int?
@@ -52,7 +58,7 @@ class SquareScene: SKScene{
     var rearramgingCounter = 30
     var counterTimer: Timer?
     var counterStartValue = 3
-    var rumbleCount = 2                      // number how many time the group of square will be rearrange
+    var rumbleCount = 4                      // number how many time the group of square will be rearrange
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -74,7 +80,6 @@ class SquareScene: SKScene{
         //        GameAsset.initializeSubmitButton(size: self.size)
         GameAsset.initializeCountdownNodes(size: self.size)
         
-        initializeFrames()
         initializeToBeAnswerSquareNode()
         
         
@@ -85,26 +90,7 @@ class SquareScene: SKScene{
     
     //MARK: - INITIALIZE
     
-    func initializeFrames(){
-        var frames:[SKTexture]? = []
-        let explosionAtlas = SKTextureAtlas(named: "Explosion")
-        for index in 1 ... 10{
-            let textureName = "explosion_\(index)"
-            let texture = explosionAtlas.textureNamed(textureName)
-            frames?.append(texture)
-        }
-        self.explosionFrames = frames
-        
-        var squareframes:[SKTexture]? = []
-        let hideAtlas = SKTextureAtlas(named: "Hide")
-        for index in 1 ... 10{
-            let textureName = "hide_\(index)"
-            let texture = hideAtlas.textureNamed(textureName)
-            squareframes?.append(texture)
-        }
-        self.hideSquareFrames = squareframes
-        
-    }
+
     
     func initializeToBeAnswerSquareNode(){
         
@@ -193,13 +179,15 @@ class SquareScene: SKScene{
             
         }
         
-        print("answerID: ", answerID)
+        
         self.checkTheUserAnswer()
     }
     
     //MARK: CHECKING THE ANSWER OF THE USER
     
     func checkTheUserAnswer(){
+        print("answerID: ", answerID)
+        print("originalLevelID: ", originalLevelID)
         if answerID == originalLevelID{
             self.squareProtocolDelegate?.showDialog(isCorrect: true)
         }
@@ -251,17 +239,13 @@ class SquareScene: SKScene{
     
             }
             if self.rumbleCount <= 1{
-                startCountingInArranging()
+                showNodesDelegate?.showNodes()
+//                startCountingInArranging()
             }
             
             print("levelID: ", allToBeAnswerNode?.levelId ?? "")
         })
-        
-        
         //        var positionArray = [CGPoint]()
-        
-        
-        
         
     }
     
@@ -377,10 +361,10 @@ class SquareScene: SKScene{
         
     }
     
-    override func didMove(to view: SKView) {
-        counter = counterStartValue
-        startCounting()
-    }
+//    override func didMove(to view: SKView) {
+//        counter = counterStartValue
+//        startCounting()
+//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -445,38 +429,38 @@ class SquareScene: SKScene{
     
     
     
-    func startCounting(){
-        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
-    }
+//    func startCounting(){
+//        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+//
+//    }
     
-    @objc func updateTimer(){
-        
-        if counter <= 0{
-            if counterTimer != nil {
-                counterTimer?.invalidate()
-                counterTimer = nil
-            }
-            // FIRST LOAD STEP - 1 : HIDE THE MEMORIZE IN AND SECOND LABEL
-            //            EasingMovement.hideTheCountdownLabelNode(scene: self, completion: {
-            //                //  FIRST LOAD STEP - 2 :  USED IN SCALING THE MEMORIZE SQUARE NODE WHEN COVERING IT
-            //                EasingMovement.scaleHideDownGroupNodeX(node: self.levelOne!, completion: {
-            //                    //  FIRST LOAD STEP - 3 :  SHOW ANSWERING NODE
-            //
-            countDownLNGroup?.setToRearranging()
-            
-            self.rumbleSquare()
-            //
-            //                    //self.showAnsweringNodes()
-            //                })
-            //            })
-            
-        }else{
-            counter -= 1
-            
-            countDownLNGroup?.memorizeInLN?.text = "Memorize in \(counter)s..."
-        }
-    }
+//    @objc func updateTimer(){
+//
+//        if counter <= 0{
+//            if counterTimer != nil {
+//                counterTimer?.invalidate()
+//                counterTimer = nil
+//            }
+//            // FIRST LOAD STEP - 1 : HIDE THE MEMORIZE IN AND SECOND LABEL
+//            //            EasingMovement.hideTheCountdownLabelNode(scene: self, completion: {
+//            //                //  FIRST LOAD STEP - 2 :  USED IN SCALING THE MEMORIZE SQUARE NODE WHEN COVERING IT
+//            //                EasingMovement.scaleHideDownGroupNodeX(node: self.levelOne!, completion: {
+//            //                    //  FIRST LOAD STEP - 3 :  SHOW ANSWERING NODE
+//            //
+//            countDownLNGroup?.setToRearranging()
+//
+//            self.rumbleSquare()
+//            //
+//            //                    //self.showAnsweringNodes()
+//            //                })
+//            //            })
+//
+//        }else{
+//            counter -= 1
+//
+//            countDownLNGroup?.memorizeInLN?.text = "Memorize in \(counter)s..."
+//        }
+//    }
     
     
 }

@@ -24,13 +24,22 @@ class RefreshNode: SKSpriteNode{
     init(size: CGSize){
         
         super.init(texture: nil, color: CMColor.cmColorViolet(), size: size)
-        let timerLabelNode = SKLabelNode(fontNamed: "Avenir-Bold")
+        let timerLabelNode = SKLabelNode(fontNamed: "Avenir-Heavy")
         timerLabelNode.position = CGPoint(x: self.size.width * 0.5, y: -(self.size.height * 0.75))
         timerLabelNode.text = "REFRESH"
         timerLabelNode.fontSize = ((size.width) * 0.15)
         timerLabelNode.fontColor = UIColor.black
         
         self.addChild(timerLabelNode)
+    }
+    
+    
+    func pressed(){
+        self.color = CMColor.cmColorViolet()
+    }
+    
+    func unPressed(){
+        self.color = CMColor.cmColorDarkViolet()
     }
     
     

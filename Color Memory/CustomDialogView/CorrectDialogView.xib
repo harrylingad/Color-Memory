@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,24 +30,26 @@
                                 <constraint firstAttribute="height" constant="150" id="Afa-9C-J4e"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORRECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itv-9f-Kfm">
-                            <rect key="frame" x="75" y="20" width="141" height="35"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORRECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itv-9f-Kfm">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="55"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="itv-9f-Kfm" secondAttribute="trailing" id="9Ff-cp-NWN"/>
                         <constraint firstItem="itv-9f-Kfm" firstAttribute="centerX" secondItem="egp-aV-KTl" secondAttribute="centerX" id="A34-hd-zP9"/>
                         <constraint firstItem="fBO-hG-SQb" firstAttribute="top" secondItem="itv-9f-Kfm" secondAttribute="bottom" constant="15" id="E9s-0z-NAg"/>
                         <constraint firstItem="fBO-hG-SQb" firstAttribute="centerX" secondItem="egp-aV-KTl" secondAttribute="centerX" id="NY9-TP-TVr"/>
-                        <constraint firstItem="itv-9f-Kfm" firstAttribute="top" secondItem="egp-aV-KTl" secondAttribute="top" constant="20" id="lDK-rT-pQT"/>
+                        <constraint firstItem="itv-9f-Kfm" firstAttribute="leading" secondItem="egp-aV-KTl" secondAttribute="leading" id="OFJ-SL-bKb"/>
+                        <constraint firstItem="itv-9f-Kfm" firstAttribute="top" secondItem="egp-aV-KTl" secondAttribute="top" id="lDK-rT-pQT"/>
                         <constraint firstAttribute="bottom" secondItem="fBO-hG-SQb" secondAttribute="bottom" constant="20" id="zEM-Pa-VPp"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.12536516785621643" green="0.58618623018264771" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="egp-aV-KTl" secondAttribute="bottom" constant="5" id="HeN-Xp-PBY"/>
                 <constraint firstItem="egp-aV-KTl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="YPE-2R-Frq"/>
