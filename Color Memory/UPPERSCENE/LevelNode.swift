@@ -11,7 +11,7 @@ import SpriteKit
 
 class LevelNode: SKSpriteNode{
     
-    var levelNode: Int?
+    var levelNode: Int = 0
     var section: Int?
     var levelLabelNode: SKLabelNode?
     var levelValueNode: SKLabelNode?
@@ -26,7 +26,6 @@ class LevelNode: SKSpriteNode{
         self.levelNode = 0
         self.section = 0
         
-        
         let levelLabelNode = SKLabelNode(fontNamed: "Avenir-Light")
         levelLabelNode.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.1)
         levelLabelNode.text = "LEVEL"
@@ -34,11 +33,9 @@ class LevelNode: SKSpriteNode{
         levelLabelNode.fontColor = UIColor.black
         self.addChild(levelLabelNode)
         
-        
-        
         levelValueNode = SKLabelNode(fontNamed: "Avenir-Heavy")
         levelValueNode?.position = CGPoint(x: self.size.width * 0.5, y: -self.size.height * 0.3)
-        levelValueNode?.text = "\(self.levelNode ?? 0) - \(self.section ?? 0)"
+        levelValueNode?.text = "\(self.levelNode ) - \(self.section ?? 0)"
         levelValueNode?.fontSize = ((size.width) * 0.3)
         levelValueNode?.fontColor = UIColor.black
         
@@ -46,18 +43,12 @@ class LevelNode: SKSpriteNode{
         
     }
     
+    func setLevel(levelNode: Int, score: Int){
+        
+        let section = (score % 3) + 1
+        levelValueNode?.text = "\(levelNode) - \(section)"
 
-
-    
-
-    
-
-    func setLevel(levelNode: Int, sectionNode: Int){
-        levelLabelNode?.text = "\(levelNode) - \(sectionNode)"
     }
-    
-    
-    
     
 }
 

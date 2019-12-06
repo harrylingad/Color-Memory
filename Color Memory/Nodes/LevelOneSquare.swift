@@ -26,11 +26,19 @@ class LevelOneSquare: SKSpriteNode{
     init(squareNumber: Int, size: CGSize) {
         parentViewSize = size
         
-        super.init(texture: nil, color: UIColor.white, size: self.setSize(squareNumber: squareNumber))
+        let halfOfSquareNumber = CGFloat(squareNumber) * 0.5
+        let divident = 1.0 / CGFloat(halfOfSquareNumber + 2)
+        let widthOfSquare = (parentViewSize?.width)! * divident
+        let selfWidth = widthOfSquare * (CGFloat(squareNumber) * 0.5)
+        let selfHeight = widthOfSquare * 2
+        
+        let levelOneSquareSize = CGSize(width: selfWidth, height: selfHeight)
+        
+        super.init(texture: nil, color: UIColor.white, size: levelOneSquareSize)
         self.position = CGPoint(x: size.width * 0.5, y: size.height * 0.7)
         
         squares = [SquareNode]()
-    
+        
         self.squareSize = self.setSquareSize(squareCount: squareNumber)
         self.size = self.setSize(squareNumber: squareNumber)
         

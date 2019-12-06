@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3034BBFAD8893BECA4ED2CA3 /* Pods_Color_MemoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC1D5757570385AB7DCD9F0 /* Pods_Color_MemoryUITests.framework */; };
+		37E35E472399E10100F5F068 /* TimesUpDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E35E462399E10100F5F068 /* TimesUpDialogView.xib */; };
+		37E35E492399F72A00F5F068 /* TimesUpDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E35E482399F72A00F5F068 /* TimesUpDialogView.swift */; };
+		37E35E4B239A13C600F5F068 /* GameOverDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E35E4A239A13C600F5F068 /* GameOverDialogView.xib */; };
+		37E35E4D239A13E500F5F068 /* GameOverDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E35E4C239A13E500F5F068 /* GameOverDialogView.swift */; };
 		3C0487EB21EA2F7F006298E9 /* CorrectDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0487E721EA2F7E006298E9 /* CorrectDialogView.xib */; };
 		3C0487EC21EA2F7F006298E9 /* CorrectDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0487E821EA2F7F006298E9 /* CorrectDialogView.swift */; };
 		3C0487ED21EA2F7F006298E9 /* WrongDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */; };
@@ -78,6 +82,10 @@
 /* Begin PBXFileReference section */
 		0B1BCCD26A55F7D7AE80B6B3 /* Pods-Color Memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color Memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color Memory/Pods-Color Memory.debug.xcconfig"; sourceTree = "<group>"; };
 		0EDF8CD5A796818FA33F8C94 /* Pods-Color MemoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Color MemoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Color MemoryTests/Pods-Color MemoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37E35E462399E10100F5F068 /* TimesUpDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimesUpDialogView.xib; sourceTree = "<group>"; };
+		37E35E482399F72A00F5F068 /* TimesUpDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUpDialogView.swift; sourceTree = "<group>"; };
+		37E35E4A239A13C600F5F068 /* GameOverDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameOverDialogView.xib; sourceTree = "<group>"; };
+		37E35E4C239A13E500F5F068 /* GameOverDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverDialogView.swift; sourceTree = "<group>"; };
 		3C0487E721EA2F7E006298E9 /* CorrectDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CorrectDialogView.xib; sourceTree = "<group>"; };
 		3C0487E821EA2F7F006298E9 /* CorrectDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectDialogView.swift; sourceTree = "<group>"; };
 		3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WrongDialogView.xib; sourceTree = "<group>"; };
@@ -176,6 +184,10 @@
 				3C0487E921EA2F7F006298E9 /* WrongDialogView.xib */,
 				3C4000A5220289D600C493CB /* PauseDialogView.xib */,
 				3C207AC62203147D0093479E /* PauseDialogView.swift */,
+				37E35E462399E10100F5F068 /* TimesUpDialogView.xib */,
+				37E35E482399F72A00F5F068 /* TimesUpDialogView.swift */,
+				37E35E4A239A13C600F5F068 /* GameOverDialogView.xib */,
+				37E35E4C239A13E500F5F068 /* GameOverDialogView.swift */,
 			);
 			path = CustomDialogView;
 			sourceTree = "<group>";
@@ -465,12 +477,14 @@
 				3C6D8AE321C494D0007F4644 /* green.jpg in Resources */,
 				3C0487EB21EA2F7F006298E9 /* CorrectDialogView.xib in Resources */,
 				3C14CFBF21C4689D0098232C /* LaunchScreen.storyboard in Resources */,
+				37E35E472399E10100F5F068 /* TimesUpDialogView.xib in Resources */,
 				3C6D8ADF21C494D0007F4644 /* dark_green.png in Resources */,
 				3C14CFBC21C4689D0098232C /* Assets.xcassets in Resources */,
 				3C6D8AE421C494D0007F4644 /* violet.png in Resources */,
 				3C6D8AE121C494D0007F4644 /* dark_blue.png in Resources */,
 				3C6D8AE021C494D0007F4644 /* red.jpg in Resources */,
 				3C14CFBA21C4689D0098232C /* Main.storyboard in Resources */,
+				37E35E4B239A13C600F5F068 /* GameOverDialogView.xib in Resources */,
 				3C6D8ADB21C494D0007F4644 /* orange.jpg in Resources */,
 				3C6D8AE221C494D0007F4644 /* blue.jpg in Resources */,
 				3C0487ED21EA2F7F006298E9 /* WrongDialogView.xib in Resources */,
@@ -640,6 +654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E35E4D239A13E500F5F068 /* GameOverDialogView.swift in Sources */,
 				3C6D8AA421C48876007F4644 /* SquareScene.swift in Sources */,
 				3C207AC72203147D0093479E /* PauseDialogView.swift in Sources */,
 				3CD8DDA321D3A0E2007D1B5C /* RefreshNode.swift in Sources */,
@@ -648,6 +663,7 @@
 				3CCD9F6921D735FD004840F7 /* MemorySquareObject.swift in Sources */,
 				3C606B0321C5F532006215F0 /* StatsNode.swift in Sources */,
 				3C14CFB721C4689D0098232C /* GameScreenViewController.swift in Sources */,
+				37E35E492399F72A00F5F068 /* TimesUpDialogView.swift in Sources */,
 				3C6D8ABA21C48D13007F4644 /* LifeNode.swift in Sources */,
 				3C6D8ABC21C48D22007F4644 /* ScoreNode.swift in Sources */,
 				3C6D8ACD21C49168007F4644 /* MenuSquareObject.swift in Sources */,

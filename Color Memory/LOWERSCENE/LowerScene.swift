@@ -14,6 +14,9 @@ import SpriteKitEasingSwift
 
 protocol RearrangingProtocol {
     func startRearranging()
+    func submitAnswer()
+    func disableSquareNode()
+    func enableSquareNode()
     
 }
 
@@ -64,9 +67,7 @@ class LowerScene: SKScene, TimerNodeProtocol{
         self.addChild(timerNode!)
         self.addChild(pauseNode!)
         self.addChild(refreshNode!)
-        
-        
-        
+
     }
     
     //MARK: - REFRESHNODE
@@ -74,15 +75,17 @@ class LowerScene: SKScene, TimerNodeProtocol{
         EasingMovement.moveNode(originalNode: refreshNode!, newPosition: LowerViewDimension.refreshNodePosition!, completion: {})
     }
     
-    
     func showPauseNode(){
-        EasingMovement.moveNode(originalNode: pauseNode!, newPosition: LowerViewDimension.pauseNodePosition!, completion: {})
+        EasingMovement.moveNode(originalNode: pauseNode!, newPosition: LowerViewDimension.pauseNodePosition!, completion: {
+            self.rearrangingDelegate?.enableSquareNode()
+            
+        })
     }
     
     //MARK: - TIMERNODEProtocol delegate
     func hideMemorizingTimer(){
+        rearrangingDelegate?.disableSquareNode()
         EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodeIntPosition!, completion: {
-            
             self.rearrangingDelegate?.startRearranging()
             //self.showMemorizingTimer()
         })
@@ -98,19 +101,9 @@ class LowerScene: SKScene, TimerNodeProtocol{
             self.timerNode?.startCountingInRearranging()
         })
     }
-    
 
-    
-
-    
-
-    
-    
-    
-    
     // OVERRIDE METHOD
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first!
         if (pauseNode?.contains(touch.location(in: self)))! {
             pauseNode?.pressed()
@@ -118,10 +111,7 @@ class LowerScene: SKScene, TimerNodeProtocol{
             refreshNode?.pressed()
         }
     }
-    
-    
-    
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first!
@@ -129,6 +119,8 @@ class LowerScene: SKScene, TimerNodeProtocol{
             pauseNode?.unPressed()
         }else if (refreshNode?.contains(touch.location(in: self)))! {
             refreshNode?.unPressed()
+            rearrangingDelegate?.submitAnswer()
+            
         }
     }
     

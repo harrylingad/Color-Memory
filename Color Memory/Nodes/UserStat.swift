@@ -50,11 +50,7 @@ class UserStat{
     
     
     func setUserStats(score: Int){
-      
-        self.levelNode?.setLevel(levelNode: (score / 3) + 1, sectionNode: (score % 3) + 1)
-        
-        
-            self.scoreNode?.setScore(score: score)
+        self.scoreNode?.setScore(score: score)
     }
     
     

@@ -80,19 +80,26 @@ class MemorySquareObject{
                 y = initialPositionY - widthOfOneSquare
             }
             
-            
             // GENERATING NUMBER
             let randomNumberDistribution = GKRandomDistribution(lowestValue: 0, highestValue: referenceIDArray.count - 1)
             let squareIDIndex = randomNumberDistribution.nextInt()
-            
             let idValue = referenceIDArray[squareIDIndex]
             
+            
+            
+            // REMOVE THE CURRENT NUMBER UNDER THE INDEX AND REPLACE idValue TO THE INDEX
             referenceIDArray = removeSquare(toBeRemoveID: idValue, toBeRemoveFromArray: referenceIDArray)
-            levelId = levelId + "\(idValue)"
+//            levelId = levelId + "\(idValue)"
+            
+//TEMP
+            let newNumber = generateNewNumber()
+            levelId = levelId + "\(newNumber)"
             
             
+//            let answerNode = SquareNode(texture: getTextureByIndex(index: idValue), size: CGSize(width: widthOfOneSquare, height: widthOfOneSquare), isActive: false, finalPosition: CGPoint(x: x, y: y), id: idValue)
             
-            let answerNode = SquareNode(texture: getTextureByIndex(index: idValue), size: CGSize(width: widthOfOneSquare, height: widthOfOneSquare), isActive: false, finalPosition: CGPoint(x: x, y: y), id: idValue)
+            //TEMP
+            let answerNode = SquareNode(texture: getTextureByIndex(index: newNumber), size: CGSize(width: widthOfOneSquare, height: widthOfOneSquare), isActive: false, finalPosition: CGPoint(x: x, y: y), id: newNumber)
             
             squares?.append(answerNode)
             
@@ -220,6 +227,20 @@ class MemorySquareObject{
         
         return newArray
         
+    }
+    
+    func generateNewNumber() -> Int{
+        
+        let newRandomNumberDistribution = GKRandomDistribution(lowestValue: 0, highestValue: 9)
+        let newNumber = newRandomNumberDistribution.nextInt()
+        
+        for square in self.squares!{
+            if square.id == newNumber{
+                return generateNewNumber()
+            }
+        }
+        
+        return newNumber
     }
     
     

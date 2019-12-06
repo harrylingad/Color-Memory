@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F39B05B8-97B6-411B-861F-3E6640D36621"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E91C00A9-1871-453F-8B23-178A2CAF892A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Color Memory/Scenes/SquareScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "saveOriginalPosition()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C49E5914-7AAF-4A88-B8B5-6C39121CBEC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Color Memory/Scenes/SquareScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "saveOriginalPosition()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C49E5914-7AAF-4A88-B8B5-6C39121CBEC2 - 7dca5582ffb8618f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Color_Memory.SquareScene.saveOriginalPosition() -&gt; ()"
+                  moduleName = "Color Memory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry.c.lingad/Desktop/MYPERSONALPROJ/Color-Memory/Color%20Memory/Scenes/SquareScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "C49E5914-7AAF-4A88-B8B5-6C39121CBEC2 - 7dca5582ffb8618f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Color_Memory.SquareScene.saveOriginalPosition() -&gt; ()"
+                  moduleName = "Color Memory"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harry.c.lingad/Desktop/MYPERSONALPROJ/Color-Memory/Color%20Memory/Scenes/SquareScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "1517">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B69FF35-ED16-4CA1-AD5F-1867CE4F5BD7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Color Memory/ViewController/GameScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "pauseRearrangeTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

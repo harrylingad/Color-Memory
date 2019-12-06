@@ -25,10 +25,8 @@ class GameAsset{
     static var whiteTexture: SKTexture?
     static var yellowTexture: SKTexture?
     
-    
     static var tobeAnswerNodes: [SquareNode]?
     
-
     static var tobeAnswerNode1: SquareNode?
     static var tobeAnswerNode2: SquareNode?
     static var tobeAnswerNode3: SquareNode?
@@ -87,7 +85,6 @@ class GameAsset{
         
     }
     
-    
     // MARK: - ONGOING
     static func initializeToBeAnswerSquareNode2(size: CGSize, referenceNode: LevelOneSquare, squareCount: Int){
         
@@ -128,23 +125,12 @@ class GameAsset{
             
             let answerNode = SquareNode(texture: getTextureByIndex(index: i - 1), size: referenceNode.squareSize!, isActive: false, finalPosition: CGPoint(x: x, y: y), id: i - 1)
             
-                
                 tobeAnswerNodes?.append(answerNode)
-            
             
             i += 1
           
         }
     }
-    
-    
-    
-    
-    
-    
-
-    
-    
     
     static func initializeSubmitButton(size: CGSize){
          

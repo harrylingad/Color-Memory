@@ -41,11 +41,9 @@ class UpperMenuScene: SKScene{
         levelNode?.position = UpperViewDimension.levelNodeIntPosition!
         levelNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        
         scoreNode = ScoreNode(size: UpperViewDimension.scoreNodeSize!, score: 0)
         scoreNode?.position = UpperViewDimension.scoreNodeIntPosition!
         scoreNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
-        
         
         self.addChild(statsNode!)
         self.addChild(levelNode!)

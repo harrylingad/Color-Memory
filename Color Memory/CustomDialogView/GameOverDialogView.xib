@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverDialogView" customModule="Color_Memory">
+            <connections>
+                <outlet property="gameOverDialogView" destination="GPf-aO-lGy" id="nth-nB-32r"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GPf-aO-lGy" customClass="GameOverDialogView" customModule="Color_Memory">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHZ-Jm-rzv">
+                    <rect key="frame" x="5" y="9" width="290" height="236"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKT-cp-gun">
+                            <rect key="frame" x="58.5" y="15" width="173" height="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_memory_icon" translatesAutoresizingMaskIntoConstraints="NO" id="oZA-TY-iaI">
+                            <rect key="frame" x="70" y="66" width="150" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="QXV-8k-eUL"/>
+                                <constraint firstAttribute="height" constant="150" id="mlS-OK-zcR"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="oZA-TY-iaI" firstAttribute="top" secondItem="UKT-cp-gun" secondAttribute="bottom" constant="15" id="Afz-Zs-ZNP"/>
+                        <constraint firstItem="UKT-cp-gun" firstAttribute="top" secondItem="ZHZ-Jm-rzv" secondAttribute="top" constant="15" id="Pty-9f-adU"/>
+                        <constraint firstItem="UKT-cp-gun" firstAttribute="centerX" secondItem="ZHZ-Jm-rzv" secondAttribute="centerX" id="QjW-gm-u0w"/>
+                        <constraint firstItem="oZA-TY-iaI" firstAttribute="centerX" secondItem="ZHZ-Jm-rzv" secondAttribute="centerX" id="hwz-G9-pZZ"/>
+                        <constraint firstAttribute="bottom" secondItem="oZA-TY-iaI" secondAttribute="bottom" constant="20" id="l09-wR-B4H"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Zr1-YV-9ud" firstAttribute="trailing" secondItem="ZHZ-Jm-rzv" secondAttribute="trailing" constant="5" id="BH7-9a-Ogq"/>
+                <constraint firstItem="Zr1-YV-9ud" firstAttribute="bottom" secondItem="ZHZ-Jm-rzv" secondAttribute="bottom" constant="5" id="MDa-9g-iYy"/>
+                <constraint firstItem="ZHZ-Jm-rzv" firstAttribute="leading" secondItem="Zr1-YV-9ud" secondAttribute="leading" constant="5" id="POp-6H-EJM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Zr1-YV-9ud"/>
+            <point key="canvasLocation" x="426.08695652173918" y="-94.419642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="color_memory_icon" width="150" height="150"/>
+    </resources>
+</document>

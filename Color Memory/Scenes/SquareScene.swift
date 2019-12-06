@@ -24,7 +24,8 @@ protocol ShowNodeProtocol{
 
 
 class SquareScene: SKScene{
-    
+ 
+
     var explosionFrames:[SKTexture]?
     var hideSquareFrames:[SKTexture]?
     var titleLabel: SKLabelNode?
@@ -41,8 +42,6 @@ class SquareScene: SKScene{
     
     var allToBeAnswerNode: MemorySquareObject?
     var answerNodePoints: [CGPoint]?
-    
-    
     
     var sqaureSize: CGFloat?
     
@@ -70,28 +69,17 @@ class SquareScene: SKScene{
         self.backgroundColor = CMColor.cmColorBlack()
         self.score = score
         
-        self.squareCount = 4//squareCount
-        
-        
-        
+        self.squareCount = squareCount //squareCount
         GameAsset.initializeTexture()
-        //        initializeToBeMemorizeSquareNode()
-        //GameAsset.initializeToBeAnswerSquareNode2(size: self.size, referenceNode: levelOne!, squareCount: squareCount)
-        //        GameAsset.initializeSubmitButton(size: self.size)
+//      initializeToBeMemorizeSquareNode()
+//      GameAsset.initializeToBeAnswerSquareNode2(size: self.size, referenceNode: levelOne!, squareCount: squareCount)
+//      GameAsset.initializeSubmitButton(size: self.size)
         GameAsset.initializeCountdownNodes(size: self.size)
         
         initializeToBeAnswerSquareNode()
-        
-        
     }
     
-    
-    
-    
     //MARK: - INITIALIZE
-    
-
-    
     func initializeToBeAnswerSquareNode(){
         
         allToBeAnswerNode = MemorySquareObject(size: size, squareCount: self.squareCount!)
@@ -108,7 +96,6 @@ class SquareScene: SKScene{
         
         for answerNode in (allToBeAnswerNode?.squares)!{
             EasingMovement.answeringNodeMoveUp(skSpriteNode: answerNode, completion:{
-                
                 
                 if ((self.allToBeAnswerNode?.squares?.index(of: answerNode))! + 1) == self.allToBeAnswerNode?.squares?.count{
                     return self.saveOriginalPosition()
@@ -133,9 +120,7 @@ class SquareScene: SKScene{
             
         }
         
-        
         self.setAnswerID(squares: (allToBeAnswerNode?.squares)!)
-        
         
     }
     
@@ -165,8 +150,7 @@ class SquareScene: SKScene{
         }
     }
     
-    
-    
+    //MARK: CHECK THE ANSWER OF THE USER BEFORE CHECKING
     func setAnswerID(squares: [SquareNode]){
         answerID = ""
         
@@ -176,25 +160,19 @@ class SquareScene: SKScene{
                     answerID = answerID + "\(square.id)"
                 }
             }
-            
         }
-        
-        
-        self.checkTheUserAnswer()
     }
     
     //MARK: CHECKING THE ANSWER OF THE USER
-    
     func checkTheUserAnswer(){
         print("answerID: ", answerID)
-        print("originalLevelID: ", originalLevelID)
+        print("originalLevelID: ", originalLevelID ?? "")
         if answerID == originalLevelID{
             self.squareProtocolDelegate?.showDialog(isCorrect: true)
+        }else{
+            self.squareProtocolDelegate?.showDialog(isCorrect: false)
         }
     }
-    
-    
-    
     
     func rumbleSquare(){
         
@@ -209,7 +187,6 @@ class SquareScene: SKScene{
             for positionIndex in (allToBeAnswerNode?.squares)!{
                 answerNodePoints?.append(positionIndex.position)
             }
-            
             
             for square in (allToBeAnswerNode?.squares)!{
                 
@@ -240,12 +217,10 @@ class SquareScene: SKScene{
             }
             if self.rumbleCount <= 1{
                 showNodesDelegate?.showNodes()
-//                startCountingInArranging()
             }
             
             print("levelID: ", allToBeAnswerNode?.levelId ?? "")
         })
-        //        var positionArray = [CGPoint]()
         
     }
     
@@ -315,7 +290,6 @@ class SquareScene: SKScene{
     
     
     func getSquareNodeByID(id: Int) -> SquareNode?{
-        
         for square in (allToBeAnswerNode?.squares)!{
             if square.id == id{
                 return square
@@ -351,20 +325,9 @@ class SquareScene: SKScene{
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //        let touch = touches.first!
-        
-        
-        //                if (submitButtonNode?.contains(touch.location(in: self)))! {
-        //                    submitButtonNode?.color = UIColor.black
-        //                    (submitButtonNode?.children[0] as? SKLabelNode)?.fontColor = UIColor.white
-        //                }
-        
+ 
     }
     
-//    override func didMove(to view: SKView) {
-//        counter = counterStartValue
-//        startCounting()
-//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -461,7 +424,7 @@ class SquareScene: SKScene{
 //            countDownLNGroup?.memorizeInLN?.text = "Memorize in \(counter)s..."
 //        }
 //    }
-    
+
     
 }
 
