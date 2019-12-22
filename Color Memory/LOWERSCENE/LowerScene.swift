@@ -17,15 +17,10 @@ protocol RearrangingProtocol {
     func submitAnswer()
     func disableSquareNode()
     func enableSquareNode()
-    
 }
 
 class LowerScene: SKScene, TimerNodeProtocol{
 
-    
-    
-    
-    var statsNode: StatsNode?
     var timerNode: TimerNode?
     var pauseNode: PauseNode?
     var refreshNode: RefreshNode?
@@ -59,7 +54,6 @@ class LowerScene: SKScene, TimerNodeProtocol{
 
         
         timerNode = TimerNode(size: LowerViewDimension.timerNodeSize!, time: 6)
-        //timerNode?.position = LowerViewDimension.timerNodeIntPosition!
         timerNode?.position = LowerViewDimension.timerNodePosition!
         timerNode?.anchorPoint = CGPoint(x: 0, y: 0.5)
         timerNode?.timerProtocol = self
@@ -78,7 +72,28 @@ class LowerScene: SKScene, TimerNodeProtocol{
     func showPauseNode(){
         EasingMovement.moveNode(originalNode: pauseNode!, newPosition: LowerViewDimension.pauseNodePosition!, completion: {
             self.rearrangingDelegate?.enableSquareNode()
+        })
+    }
+    
+    //MARK: - REFRESHNODE
+    func hideRefreshNode(){
+        EasingMovement.moveNode(originalNode: refreshNode!, newPosition: LowerViewDimension.refreshNodeIntPosition!, completion: {})
+    }
+    
+    func hidePauseNode(){
+        EasingMovement.moveNode(originalNode: pauseNode!, newPosition: LowerViewDimension.pauseNodeIntPosition!, completion: {
+            self.rearrangingDelegate?.enableSquareNode()
+            self.showMemorizingTimerForNextLevel()
+        })
+    }
+    
+    func hideAnsweringTimer(){
+        EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodeIntPosition!, completion: {
+//            self.timerNode?.counterTimer?.invalidate()
+//            self.timerNode = nil
             
+            //            self.rearrangingDelegate?.startRearranging()
+            //self.showMemorizingTimer()
         })
     }
     
@@ -87,11 +102,20 @@ class LowerScene: SKScene, TimerNodeProtocol{
         rearrangingDelegate?.disableSquareNode()
         EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodeIntPosition!, completion: {
             self.rearrangingDelegate?.startRearranging()
-            //self.showMemorizingTimer()
         })
     }
     
-    func showMemorizingTimer(){
+    func showMemorizingTimerForNextLevel(){
+        rearrangingDelegate?.disableSquareNode()
+        /*Set the time to 5 again **/
+        timerNode?.resetTime(time: 5)
+        timerNode?.pauseRearrangeTime()
+        EasingMovement.moveNode(originalNode: timerNode!, newPosition: LowerViewDimension.timerNodePosition!, completion: {
+            self.timerNode?.startCountingInMemorizing()
+        })
+    }
+    
+    func showLowerScene(){
         timerNode?.time = 31
         timerNode?.timerValueNode?.text = "\(30)"
         timerNode?.color = CMColor.cmColorLightGreen()
@@ -101,7 +125,13 @@ class LowerScene: SKScene, TimerNodeProtocol{
             self.timerNode?.startCountingInRearranging()
         })
     }
-
+    
+    func hideLowerScene(){
+        hideAnsweringTimer()
+        hideRefreshNode()
+        hidePauseNode()
+    }
+    
     // OVERRIDE METHOD
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!

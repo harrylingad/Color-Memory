@@ -27,6 +27,7 @@ class TimerNode: SKSpriteNode{
     var isTimerPaused: Bool = false
     var timerProtocol: TimerNodeProtocol?
     var noMoreTimeDelegate: NoMoreTimeProtocol?
+    var isMemorizingPhase: Bool = true
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,7 +36,6 @@ class TimerNode: SKSpriteNode{
     init(){
         super.init(texture: nil, color: UIColor.gray, size: CGSize(width: 0, height: 0))
     }
-    
     
     init(size: CGSize, time: Int){
         
@@ -62,6 +62,12 @@ class TimerNode: SKSpriteNode{
     
     
     //MARK: - MEMORIZING
+    func resetTime(time: Int){
+        self.time = time
+        self.timerValueNode?.text = "\(5)"
+        self.color = CMColor.cmColorOrange()
+    }
+    
     func setTimeMemorizing(time: Int){
         self.time = time
         if time > 5{
@@ -72,6 +78,12 @@ class TimerNode: SKSpriteNode{
     }
     
     func startCountingInMemorizing(){
+        if counterTimer != nil{
+            counterTimer?.invalidate()
+            counterTimer = nil
+        }
+        
+        self.isMemorizingPhase = true
         counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerMemorizing), userInfo: nil, repeats: true)
     }
     
@@ -82,6 +94,7 @@ class TimerNode: SKSpriteNode{
                 counterTimer?.invalidate()
                 counterTimer = nil
             }
+            self.isMemorizingPhase = false
             timerProtocol?.hideMemorizingTimer()
         }else{
             time -= 1
@@ -89,12 +102,14 @@ class TimerNode: SKSpriteNode{
         }
     }
     
-    
-    
-    
-    
     //MARK: - REARRANGINg
     func startCountingInRearranging(){
+        
+        if counterTimer != nil{
+            counterTimer?.invalidate()
+            counterTimer = nil
+        }
+        
         counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerRearranging), userInfo: nil, repeats: true)
     }
     
@@ -119,6 +134,12 @@ class TimerNode: SKSpriteNode{
         self.timerValueNode?.text = "\(self.time)"
     }
     
+    func clearRunningTimeForNextLevel(){
+        if counterTimer != nil{
+            counterTimer?.invalidate()
+            isTimerPaused = true
+        }
+    }
     
     func pauseRearrangeTime(){
         if isTimerPaused{

@@ -19,6 +19,7 @@ protocol SquareProtocol{
 
 protocol ShowNodeProtocol{
     func showNodes()
+    func hideUpperSceneNodes()
 }
 
 
@@ -71,9 +72,6 @@ class SquareScene: SKScene{
         
         self.squareCount = squareCount //squareCount
         GameAsset.initializeTexture()
-//      initializeToBeMemorizeSquareNode()
-//      GameAsset.initializeToBeAnswerSquareNode2(size: self.size, referenceNode: levelOne!, squareCount: squareCount)
-//      GameAsset.initializeSubmitButton(size: self.size)
         GameAsset.initializeCountdownNodes(size: self.size)
         
         initializeToBeAnswerSquareNode()
@@ -86,9 +84,7 @@ class SquareScene: SKScene{
         for answerNode in (allToBeAnswerNode?.squares)!{
             self.addChild(answerNode)
         }
-        
         originalLevelID = allToBeAnswerNode?.levelId
-        
     }
 
     //MARK: - OTHER FUNCTIONS
@@ -223,72 +219,7 @@ class SquareScene: SKScene{
         })
         
     }
-    
-    
-    
-    
-    //    func rumbleSquare(){
-    //
-    //        allToBeAnswerNode?.generateNewID(originalID: (allToBeAnswerNode?.levelId)!, squareCount: squareCount!, completion: {
-    //
-    //        })
-    //
-    //        allToBeAnswerNode?.generateNewID(originalID: (allToBeAnswerNode?.levelId)!, squareCount: squareCount!)
-    //
-    ////        var positionArray = [CGPoint]()
-    //
-    //        if answerNodePoints != nil{
-    //            answerNodePoints?.removeAll()
-    //        }else{
-    //            answerNodePoints = [CGPoint]()
-    //        }
-    //
-    //        for positionIndex in (allToBeAnswerNode?.squares)!{
-    //            answerNodePoints?.append(positionIndex.position)
-    //        }
-    //
-    //
-    //        for square in (allToBeAnswerNode?.squares)!{
-    //
-    //            let ind0 = square.id
-    //            let indexToMoveBySquareID = newID?.index(of: ind0)
-    //
-    //
-    //            EasingMovement.moveNode(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!], completion: {
-    //
-    //            if self.allToBeAnswerNode?.squares?.index(of: square) == ((self.allToBeAnswerNode?.squares?.count)! - 1){
-    //
-    //                        var newNodes = [SquareNode]()
-    //                        for id in newID!{
-    //                            newNodes.append(self.getSquareNodeByID(id: id)!)
-    //                        }
-    //
-    //                        self.allToBeAnswerNode?.squares = newNodes
-    //
-    //
-    //                        if self.rumbleCount > 0{
-    //                            self.rumbleSquare()
-    //                        }
-    //
-    //                        self.rumbleCount = self.rumbleCount - 1
-    //
-    //
-    //                }
-    //
-    //            })
-    //
-    //        }
-    //        if self.rumbleCount <= 1{
-    //            countDownLNGroup?.setToStart()
-    //        }
-    //
-    //        print("levelID: ", allToBeAnswerNode?.levelId ?? "")
-    //
-    //
-    //    }
-    
-    
-    
+
     func getSquareNodeByID(id: Int) -> SquareNode?{
         for square in (allToBeAnswerNode?.squares)!{
             if square.id == id{
@@ -312,17 +243,7 @@ class SquareScene: SKScene{
         for tobeAnswerNode in (allToBeAnswerNode?.squares)!{
             tobeAnswerNode.isActive = false
         }
-        
-        //        let touch = touches.first!
-        //        if (submitButtonNode?.contains(touch.location(in: self)))! {
-        //            submitButtonNode?.color = UIColor.white
-        //            (submitButtonNode?.children[0] as? SKLabelNode)?.fontColor = UIColor.black
-        //            self.checkTheUserAnswer()
-        //        }
     }
-    
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
  
@@ -330,7 +251,6 @@ class SquareScene: SKScene{
     
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         for touch: AnyObject in touches {
             let location = touch.location(in: self)
             
@@ -374,7 +294,6 @@ class SquareScene: SKScene{
     }
     
     @objc func updateTimerRearranging(){
-        
         if rearramgingCounter <= 0{
             if counterTimer != nil {
                 counterTimer?.invalidate()
@@ -389,42 +308,35 @@ class SquareScene: SKScene{
             countDownLNGroup?.memorizeInLN?.text = "Arrange in \(rearramgingCounter)s..."
         }
     }
-    
-    
-    
-//    func startCounting(){
-//        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-//
-//    }
-    
-//    @objc func updateTimer(){
-//
-//        if counter <= 0{
-//            if counterTimer != nil {
-//                counterTimer?.invalidate()
-//                counterTimer = nil
-//            }
-//            // FIRST LOAD STEP - 1 : HIDE THE MEMORIZE IN AND SECOND LABEL
-//            //            EasingMovement.hideTheCountdownLabelNode(scene: self, completion: {
-//            //                //  FIRST LOAD STEP - 2 :  USED IN SCALING THE MEMORIZE SQUARE NODE WHEN COVERING IT
-//            //                EasingMovement.scaleHideDownGroupNodeX(node: self.levelOne!, completion: {
-//            //                    //  FIRST LOAD STEP - 3 :  SHOW ANSWERING NODE
-//            //
-//            countDownLNGroup?.setToRearranging()
-//
-//            self.rumbleSquare()
-//            //
-//            //                    //self.showAnsweringNodes()
-//            //                })
-//            //            })
-//
-//        }else{
-//            counter -= 1
-//
-//            countDownLNGroup?.memorizeInLN?.text = "Memorize in \(counter)s..."
-//        }
-//    }
+}
 
+
+
+
+//MARK: - Next Level
+extension SquareScene{
+    
+    func replaceAllSquares(){
+        for square in allToBeAnswerNode?.squares ?? [SquareNode](){
+            let nextX = (self.view?.frame.width ?? 0) + square.position.x
+            let newPosition = CGPoint(x: nextX, y: square.position.y)
+            EasingMovement.moveNode(originalNode: square, newPosition: newPosition , completion:{
+
+                print("square index: ",  self.allToBeAnswerNode?.squares?.index(of: square) ?? 99)
+                if self.allToBeAnswerNode?.squares?.index(of: square) == 0{
+                    self.removeAllChildren()
+                    self.rumbleCount = 4
+                    self.initializeToBeAnswerSquareNode()
+                }
+            })
+        }
+    }
+    
+    func temporarilyHideUpperSceneNodes(){
+        self.showNodesDelegate?.hideUpperSceneNodes()
+    }
+    
+    
     
 }
 

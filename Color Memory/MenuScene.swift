@@ -43,7 +43,7 @@ class MenuScene: SKScene{
         
         initializeToBeAnswerSquareNode()
         
-        rumbleSquare()
+//        rumbleSquare()
         
         
     }
@@ -114,50 +114,50 @@ class MenuScene: SKScene{
     
     
     
-    func rumbleSquare(){
-        
-        allToBeAnswerNode?.generateNewID(originalID: (allToBeAnswerNode?.levelId)!, squareCount: squareCount!, completion: {newID in
-            
-            if answerNodePoints != nil{
-                answerNodePoints?.removeAll()
-            }else{
-                answerNodePoints = [CGPoint]()
-            }
-            
-            for positionIndex in (allToBeAnswerNode?.squares)!{
-                answerNodePoints?.append(positionIndex.position)
-            }
-            
-            
-            for square in (allToBeAnswerNode?.squares)!{
-                
-                let ind0 = square.id
-                let indexToMoveBySquareID = newID.index(of: ind0)
-                
-                
-                if self.allToBeAnswerNode?.squares?.index(of: square) == ((self.allToBeAnswerNode?.squares?.count)! - 1){
-                    EasingMovement.moveNodeWithCompletion(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!], completion: {
-                        
-                        var newNodes = [SquareNode]()
-                        for id in newID{
-                            newNodes.append(self.getSquareNodeByID(id: id)!)
-                        }
-                        
-                        self.allToBeAnswerNode?.squares = newNodes
-                        
-                        if self.continueRumbleSquare{
-                            self.rumbleSquare()
-                        }
-                    })
-                }else{
-                    EasingMovement.moveNode(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!])
-                }
-                
-                
-            }
-            
-        })
-    }
+//    func rumbleSquare(){
+//
+//        allToBeAnswerNode?.generateNewID(originalID: (allToBeAnswerNode?.levelId)!, squareCount: squareCount!, completion: {newID in
+//
+//            if answerNodePoints != nil{
+//                answerNodePoints?.removeAll()
+//            }else{
+//                answerNodePoints = [CGPoint]()
+//            }
+//
+//            for positionIndex in (allToBeAnswerNode?.squares)!{
+//                answerNodePoints?.append(positionIndex.position)
+//            }
+//
+//
+//            for square in (allToBeAnswerNode?.squares)!{
+//
+//                let ind0 = square.id
+//                let indexToMoveBySquareID = newID.index(of: ind0)
+//
+//
+//                if self.allToBeAnswerNode?.squares?.index(of: square) == ((self.allToBeAnswerNode?.squares?.count)! - 1){
+//                    EasingMovement.moveNodeWithCompletion(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!], completion: {
+//
+//                        var newNodes = [SquareNode]()
+//                        for id in newID{
+//                            newNodes.append(self.getSquareNodeByID(id: id)!)
+//                        }
+//
+//                        self.allToBeAnswerNode?.squares = newNodes
+//
+//                        if self.continueRumbleSquare{
+//                            self.rumbleSquare()
+//                        }
+//                    })
+//                }else{
+//                    EasingMovement.moveNode(originalNode: square, newPosition: answerNodePoints![indexToMoveBySquareID!])
+//                }
+//
+//
+//            }
+//
+//        })
+//    }
     
     
     

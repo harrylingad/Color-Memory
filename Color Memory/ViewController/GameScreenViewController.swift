@@ -12,17 +12,22 @@ import SpriteKitEasingSwift
 import SimpleAlert
 
 class GameScreenViewController: UIViewController, SquareProtocol, RearrangingProtocol, ShowNodeProtocol, NoMoreTimeProtocol, PauseNodeProtocol {
+    
+    
    
     @IBOutlet weak var navigationView: UIView!
     
     @IBOutlet weak var statsView: SKView!
-    var upperScene:  UpperMenuScene?
+    
+    
     
     @IBOutlet weak var lowerSceneView: SKView!
+    
+    var upperScene:  UpperMenuScene?
+    var scene: SquareScene?
     var lowerScene: LowerScene?
     
     @IBOutlet weak var sceneView: SKView!
-    var scene:SquareScene?
     
     var score: Int = 0
     var level: Int = 0
@@ -36,8 +41,9 @@ class GameScreenViewController: UIViewController, SquareProtocol, RearrangingPro
         
         self.navigationView.backgroundColor = CMColor.cmColorBlack()
         
-//        let defaults = UserDefaults.standard
+        let defaults = UserDefaults.standard
         score = defaults.integer(forKey: "score")
+//        score = 0
         
         self.upperScene = UpperMenuScene(size: self.statsView.frame.size)
         self.upperScene?.scoreNode?.setScore(score: score )
@@ -83,19 +89,28 @@ class GameScreenViewController: UIViewController, SquareProtocol, RearrangingPro
         // Dispose of any resources that can be recreated.
     }
     
-    func goToNextMemoryScreen(){
+    func updateScore(){
+        self.score = score + 1
+        self.level = level + 1
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "GameScreen") as! GameScreenViewController
-        newViewController.score = score + 1
-        newViewController.level = level + 1
-        
-//        let defaults = UserDefaults.standard
-        defaults.set(newViewController.score, forKey: "score")
-        
-        self.present(newViewController, animated: true, completion: nil)
-        
+        self.upperScene?.scoreNode?.setScore(score: score )
+        self.upperScene?.levelNode?.setLevel(levelNode: setCountOfSquare(score: score).1, score: score)
+        defaults.set(self.score, forKey: "score")
     }
+    
+//    func goToNextMemoryScreen(){
+//
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "GameScreen") as! GameScreenViewController
+//        newViewController.score = score + 1
+//        newViewController.level = level + 1
+//
+////        let defaults = UserDefaults.standard
+//        defaults.set(newViewController.score, forKey: "score")
+//
+//        self.present(newViewController, animated: true, completion: nil)
+//
+//    }
 
     // FIRST(0) RETURN VALUE IS SQUARECOUNT, SECOND(1) IS LEVEL
     func setCountOfSquare(score: Int) -> (Int, Int){
@@ -119,10 +134,17 @@ class GameScreenViewController: UIViewController, SquareProtocol, RearrangingPro
         upperScene?.showStats()
         upperScene?.showLevel()
         upperScene?.showScore()
-        lowerScene?.showMemorizingTimer()
+        lowerScene?.showLowerScene()
+    }
+    
+    
+    func hideUpperSceneNodes(){
+        upperScene?.hideStats()
+        upperScene?.hideLevel()
+        upperScene?.hideScore()
+        lowerScene?.hideLowerScene()
     }
 
-    
     //MARK: - RearrangingProtocol
     func startRearranging() {
         scene?.rumbleSquare()
@@ -146,22 +168,22 @@ class GameScreenViewController: UIViewController, SquareProtocol, RearrangingPro
 
 }
 
-
-
-
-
 //MARK: - DIALOGs
 extension GameScreenViewController{
     
     //PAUSE THE TIMER AND SHOW THE CORRECT ANSWER DIALOG
        func showCorrectDialog(){
-           
-           self.lowerScene?.timerNode?.pauseRearrangeTime()
+        
+           self.lowerScene?.timerNode?.clearRunningTimeForNextLevel()
            let correctDialogView = CorrectDialogView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
            let alert = AlertController(view: correctDialogView, style: .alert)
 
            let action = AlertAction(title: "Continue", style: .ok) { action in
-               self.goToNextMemoryScreen()
+            
+            self.scene?.replaceAllSquares()
+            self.scene?.temporarilyHideUpperSceneNodes()
+            self.updateScore()
+            //self.goToNextMemoryScreen()
            }
 
            alert.addAction(action)
@@ -189,8 +211,6 @@ extension GameScreenViewController{
             }else{
                 self.upperScene?.statsNode?.removeLife(numberOfLife: self.upperScene?.statsNode?.numberOfLife ?? 3)
             }
-            
-               self.resumeGame()
            }
 
            alert.addAction(action)
@@ -253,6 +273,8 @@ extension GameScreenViewController{
            
            present(alert, animated: true, completion: nil)
        }
+    
+
 }
 
 
@@ -276,4 +298,16 @@ extension GameScreenViewController{
         self.lowerScene?.timerNode?.pauseRearrangeTime()
     }
     
+}
+
+
+
+
+
+
+//MARK: - DIALOG BUTTON ACTION
+extension GameScreenViewController{
+    func moveSquareScene(){
+        
+    }
 }

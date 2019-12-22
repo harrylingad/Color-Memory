@@ -48,7 +48,7 @@ class UpperMenuScene: SKScene{
         self.addChild(statsNode!)
         self.addChild(levelNode!)
         self.addChild(scoreNode!)
-        
+ 
     }
 
     
@@ -63,6 +63,24 @@ class UpperMenuScene: SKScene{
     func showScore(){
         EasingMovement.moveNode(originalNode: scoreNode!, newPosition: UpperViewDimension.scoreNodePosition! , completion:{})
     }
+    
+    
+    func hideStats(){
+        EasingMovement.moveNode(originalNode: statsNode!, newPosition: UpperViewDimension.statsNodeIntPosition! , completion:{})
+    }
+    
+    func hideLevel(){
+        EasingMovement.moveNode(originalNode: levelNode!, newPosition: UpperViewDimension.levelNodeIntPosition! , completion:{})
+    }
+    
+    func hideScore(){
+        EasingMovement.moveNode(originalNode: scoreNode!, newPosition: UpperViewDimension.scoreNodeIntPosition! , completion:{})
+    }
+    
+    
+    
+    
+    
     
     
     
